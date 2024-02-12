@@ -5,8 +5,9 @@ export default function Home() {
 
   return (
     <main>
-      <Link href="/register">Register Page</Link>
-      <Link href="/login">Login Page</Link>
+      <Link href="./register">Register Page</Link>
+      <Link href="./login">Login Page</Link>
+      <Link href="./dashboard">Dashboard</Link>
     </main>
   );
 }

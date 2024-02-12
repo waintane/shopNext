@@ -6,6 +6,16 @@ const bcrypt = require('bcrypt');
 
 const prisma = new PrismaClient()
 
+type jwt = {
+    token: any,
+    user: any
+    session: any
+}
+type session = {
+    session: any,
+    token: any,
+    user: any
+}
 
 
 export const authOptions:any = {
@@ -37,6 +47,27 @@ export const authOptions:any = {
             }
         })
     ],
+    callbacks: {
+        async jwt({token, user, session}: session){
+            if(user){
+                return{
+                    ...token,
+                    status: user.status,
+                }
+            }
+            return token;
+        },
+        async session({session, token, user}: session){
+            return {
+                ...session,
+                user: {
+                    status: token.status,
+                    email: token.email,
+                    name: token.name
+                }
+            }
+        },
+    },
     session: {
         strategy: "jwt",
     },

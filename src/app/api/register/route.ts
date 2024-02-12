@@ -8,7 +8,7 @@ export async function POST(req:any){
     const body = await req.json();
     const name = body.data.name;
     const email = body.data.email;
-    const status = "user";
+    const status = "client";
     let password = body.data.password;
 
     console.log(body);
