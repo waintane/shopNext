@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 export default function HeaderDashboard(){
     return(
         <header>
-            <h1>this is the header</h1>
+            <Link href="dashboard/addProduct">Add Product</Link>
         </header>
     )
 }

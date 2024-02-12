@@ -3,8 +3,8 @@
 import { useSession } from "next-auth/react";
 import  { useRouter } from "next/navigation";
 import Link from "next/link";
-import HeaderDashboard from "./headerDashboard";
-import DashboardContent from "./dashboardContent";
+import ProductForm from "./productForm";
+import CategorySelection from "./categorySelection";
 
 type user = {
     name?: string | null | undefined,
@@ -13,7 +13,7 @@ type user = {
     status?: string | null | undefined,
 }
 
-export default function DashBoardPage(){
+export default function AddProduct(){
     const router = useRouter();
     const { data: session, status } = useSession();
     const user:user = session?.user!;
@@ -22,14 +22,12 @@ export default function DashBoardPage(){
         if(user.status === "client"){
             router.push("./");
         }
-        if(user.status === "admin"){
-            return(
-                <div>
-                    <HeaderDashboard></HeaderDashboard>
-                    <DashboardContent user={user}></DashboardContent>
-                </div>
-            )
-        }
+        return(
+            <div>
+                <h2>publish new products</h2>
+                <ProductForm></ProductForm>
+            </div>
+        )
     }
     else if(!user){
         return(
