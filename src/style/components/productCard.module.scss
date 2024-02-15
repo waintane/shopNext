@@ -1,0 +1,27 @@
+.productCard{
+    width: 20vw;
+    height: 30vw;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+    .containerImg{
+        height: 70%;
+            img{
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                display: flex;
+            }
+    }
+    .content{
+        h2{
+            font-size: 16px;
+        }
+        p{
+            font-size: 16px;
+        }
+    }
+
+}
