@@ -14,7 +14,6 @@ export default function ProductCard({product}: ProductCardProps){
             </div>
             <div className={styles.content}>
                 <h2> {product.name} </h2>
-                <p> {product.description} </p>
                 <p> {product.price / 100}$ </p>
             </div>
         </Link>

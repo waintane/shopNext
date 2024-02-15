@@ -1,0 +1,13 @@
+.panel{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    img{
+        height: 2vw;
+        width: 2vw;
+    }
+    button{
+        width: 50px;
+    }
+}

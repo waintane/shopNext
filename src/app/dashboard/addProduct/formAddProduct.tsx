@@ -1,6 +1,7 @@
 import { Categories } from "@prisma/client";
 import { prisma } from "@/lib/db/prisma";
 import FormSubmitButton from "@/lib/components/formSubmitButton";
+import { redirect } from "next/navigation";
 
 type FormAddProductProps = {
     categories : Categories[]
@@ -24,6 +25,8 @@ async function addProduct(formData:FormData){
     await prisma.product.create({
         data: {name, description, imageUrl, category, sex, quantity, price}
     });
+
+    redirect("./addProduct");
 }
 
 export default function FormAddProduct({categories}:FormAddProductProps){
@@ -44,6 +47,7 @@ export default function FormAddProduct({categories}:FormAddProductProps){
                     <input required type="text" name="imageUrl" id="imageUrl" placeholder="Image URL"/>
                 </div>
                 <div>
+                    <label htmlFor="category">Categorie du produit: </label>
                     <select required name="category" id="category">
                         {categories?.map(e => (
                             <option value={e.name} key={e.id}> {e.name} </option>
@@ -51,6 +55,7 @@ export default function FormAddProduct({categories}:FormAddProductProps){
                     </select>
                 </div>
                 <div>
+                    <label htmlFor="sex">Clientèle cible du produit: </label>
                     <select name="sex" id="sex">
                         <option value="homme">Homme</option>
                         <option value="femme">Femme</option>

@@ -25,7 +25,7 @@ export default async function DashBoardPage(){
     }
 
     return(
-        <div className={styles.dashboard}>
+        <div className={styles.dashboardPage}>
             <HeaderDashboard></HeaderDashboard>
             <DashboardContent user={user}></DashboardContent>
         </div>

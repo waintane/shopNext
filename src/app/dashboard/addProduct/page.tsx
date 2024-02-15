@@ -19,7 +19,7 @@ export default async function AddProduct(){
         orderBy: {id: "desc"}
     });
     return(
-        <div className={styles.dashboard}>
+        <div className={styles.dashboardPage}>
             <HeaderDashboard></HeaderDashboard>
             <FormAddProduct categories={categories}></FormAddProduct>
         </div>
