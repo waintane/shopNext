@@ -1,10 +1,12 @@
-"use client";
+"use server";
 
-import { useSession } from "next-auth/react";
-import  { useRouter } from "next/navigation";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+import  { redirect } from "next/navigation";
 import Link from "next/link";
 import HeaderDashboard from "./headerDashboard";
 import DashboardContent from "./dashboardContent";
+import styles from "../../style/components/dashboard.module.scss";
 
 type user = {
     name?: string | null | undefined,
@@ -13,30 +15,19 @@ type user = {
     status?: string | null | undefined,
 }
 
-export default function DashBoardPage(){
-    const router = useRouter();
-    const { data: session, status } = useSession();
-    const user:user = session?.user!;
+export default async function DashBoardPage(){
 
-    if(user){
-        if(user.status === "client"){
-            router.push("./");
-        }
-        if(user.status === "admin"){
-            return(
-                <div>
-                    <HeaderDashboard></HeaderDashboard>
-                    <DashboardContent user={user}></DashboardContent>
-                </div>
-            )
-        }
+    const session:any = await getServerSession(authOptions);
+    const user = await session?.user;
+
+    if(user?.status != "admin"){
+        redirect("./");
     }
-    else if(!user){
-        return(
-            <div>
-                <h1>you are not connected please go to the login page</h1>
-                <Link href="./login">Login page</Link>
-            </div>
-        )
-    }
+
+    return(
+        <div className={styles.dashboard}>
+            <HeaderDashboard></HeaderDashboard>
+            <DashboardContent user={user}></DashboardContent>
+        </div>
+    )
 }
