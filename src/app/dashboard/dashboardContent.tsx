@@ -7,8 +7,8 @@ type user = {
 export default function DashboardContent({user}:user){
     return(
         <div>
-            <h2>Dashboard Page</h2>
-            <p>Hi {user?.name} </p>
+            <h2>Tableau de bord</h2>
+            <p>Bonjour {user?.name} </p>
         </div>
     )
 }

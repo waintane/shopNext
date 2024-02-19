@@ -15,15 +15,17 @@ async function addProduct(formData:FormData){
     const imageUrl = formData.get("imageUrl")?.toString();
     const category = formData.get("category")?.toString();
     const sex = formData.get("sex")?.toString();
-    const quantity = Number(formData.get("quantity") || 0);
+    const quantitySmall = Number(formData.get("quantitySmall") || 0);
+    const quantityMedium = Number(formData.get("quantityMedium") || 0);
+    const quantityLarge = Number(formData.get("quantityLarge") || 0);
     const price = Number(formData.get("price") || 0);
 
-    if(!name || !description || !imageUrl || !category || !sex || !quantity || !price){
+    if(!name || !description || !imageUrl || !category || !sex || !price ){
         throw Error ("misssing required fields");
     }
 
     await prisma.product.create({
-        data: {name, description, imageUrl, category, sex, quantity, price}
+        data: {name, description, imageUrl, category, sex, quantitySmall , quantityMedium , quantityLarge , price}
     });
 
     redirect("./addProduct");
@@ -35,7 +37,7 @@ export default function FormAddProduct({categories}:FormAddProductProps){
             <h1>Add product</h1>
             <form action={addProduct}>
                 <div>
-                    <label htmlFor="name">Name of the product: </label>
+                    <label htmlFor="name">Nom du produit: </label>
                     <input required type="text" name="name" id="name" placeholder="Name"/>
                 </div>
                 <div>
@@ -43,11 +45,11 @@ export default function FormAddProduct({categories}:FormAddProductProps){
                     <textarea required name="description" id="description" placeholder="Description"></textarea>
                 </div>
                 <div>
-                    <label htmlFor="imageUrl">Image of the product: </label>
+                    <label htmlFor="imageUrl">Image du produit: </label>
                     <input required type="text" name="imageUrl" id="imageUrl" placeholder="Image URL"/>
                 </div>
                 <div>
-                    <label htmlFor="category">Categorie du produit: </label>
+                    <label htmlFor="category">Catégorie du produit: </label>
                     <select required name="category" id="category">
                         {categories?.map(e => (
                             <option value={e.name} key={e.id}> {e.name} </option>
@@ -63,11 +65,19 @@ export default function FormAddProduct({categories}:FormAddProductProps){
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="quantity">The quantity in stock</label>
-                    <input required type="text" name="quantity" id="quantity" placeholder="quantity"/>
+                    <label htmlFor="quantitySmall">Quantité petit en stock : </label>
+                    <input required type="text" name="quantitySmall" id="quantitySmall" placeholder="quantity petit"/>
                 </div>
                 <div>
-                    <label htmlFor="price">Price of the product: </label>
+                    <label htmlFor="quantityMedium">Quantité medium en stock : </label>
+                    <input required type="text" name="quantityMedium" id="quantityMedium" placeholder="quantity medium"/>
+                </div>
+                <div>
+                    <label htmlFor="quantityLarge">Quantité large en stock : </label>
+                    <input required type="text" name="quantityLarge" id="quantityLarge" placeholder="quantity large"/>
+                </div>
+                <div>
+                    <label htmlFor="price">Prix du produit: </label>
                     <input required type="number" name="price" id="price" placeholder="Price"/>
                 </div>
                 <FormSubmitButton>Envoyer</FormSubmitButton>

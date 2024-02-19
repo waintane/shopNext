@@ -17,14 +17,31 @@ async function removeCategory(formData:FormData){
     redirect("./allProduct");
 }
 
+async function updateItem(formData:FormData){
+    "use server";
+
+    const id = formData.get("id")?.toString();
+
+    if(id){
+        redirect("./allProduct/updateProduct?target="+`${id}`);
+    }
+}
+
 export default function ProductPanel({product}:productsPanelProps){
     return(
+        <div>
         <form action={removeCategory} className={styles.panel}>
             <img src={product.imageUrl} alt={product.name} />
             <p> {product.name} </p>
-            <p>categorie : {product.category} </p>
+            <p>Categorie: {product.category} </p>
+            <p>Quantité: {product.quantity} </p>
             <input style={{display: 'none'}} type="text" value={product.id} name="id" />
             <button type="submit">x</button>
         </form>
+        <form action={updateItem}>
+            <input style={{display: 'none'}} type="text" value={product.id} name="id" />
+            <button type="submit">Modifier</button>
+        </form>
+        </div>
     )
 }

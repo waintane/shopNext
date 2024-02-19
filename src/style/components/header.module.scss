@@ -1,5 +1,12 @@
 .header{
+    position: fixed;
+    background-color: #5F769C;
     display: flex;
-    padding-bottom: 20px;
+    height: 50px;
+    width: 100%;
     gap: 30px;
+    a{
+        text-decoration: none;
+        color: white;
+    }
 }

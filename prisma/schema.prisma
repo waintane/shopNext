@@ -53,7 +53,9 @@ model Product {
   description   String
   price         Int
   imageUrl      String
-  quantity      Int
+  quantitySmall Int?
+  quantityMedium Int?
+  quantityLarge Int?
   category      String
   sex           String?
   createdAt   DateTime @default(now())

@@ -10,12 +10,14 @@ export async function querySearch(formData:FormData){
     "use server";
 
     let query = formData.get("search")?.toString();
-    
+  
     if(!query){
         query = "";
     }
     redirect("./allProduct?query=" + `${query}`);
 }
+
+
 
 
 export default function ProductFilter({products}:productsProps){
@@ -29,7 +31,7 @@ export default function ProductFilter({products}:productsProps){
                 </form>
             </div>
             {products.map(e => (
-                <ProductPanel product={e} key={e.id}></ProductPanel>
+                    <ProductPanel product={e} key={e.id}></ProductPanel>
             ))}
         </div>
     )
