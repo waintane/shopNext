@@ -1,0 +1,25 @@
+.bannerPoint{
+    margin: 100px 0px 50px 0px;
+    padding: 40px 0px;
+    background-color: #324565;
+    color: white;
+    text-align: center;
+
+    .lines{
+        div{
+            height: 2px;
+            background-color:  #EABF48;
+            margin: 15px auto;
+
+            &:first-of-type{
+                width: 70%;
+            }
+            &:nth-of-type(2){
+                width: 50%;
+            }
+            &:nth-of-type(3){
+                width: 20%;
+            }
+        }
+    }
+}

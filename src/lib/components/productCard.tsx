@@ -9,12 +9,17 @@ interface ProductCardProps {
 export default function ProductCard({product}: ProductCardProps){
     return(
         <Link href={"/products/"+product.id} className={styles.productCard}>
-            <div className={styles.containerImg}>
-                <img src={product.imageUrl} alt={product.name} />
+            <div className={styles.card}>
+                <div className={styles.containerImg}>
+                    <img src={product.imageUrl} alt={product.name} />
+                </div>
+                <div className={styles.content}>
+                    <h2> {product.name} </h2>
+                    <p> {product.price / 100}$ </p>
+                </div>                
             </div>
-            <div className={styles.content}>
-                <h2> {product.name} </h2>
-                <p> {product.price / 100}$ </p>
+            <div className={styles.addCart}>
+                <button>Ajouter au panier</button>
             </div>
         </Link>
     )

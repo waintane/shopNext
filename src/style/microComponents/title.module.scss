@@ -1,0 +1,45 @@
+.title{
+    margin: 60px 0px;
+    .lineContainer{
+        width: 100vw;
+        height: 4px;
+        display: flex;
+        &:first-of-type{
+            div{
+                &:first-of-type{
+                    width: 40%;
+                    height: 100%;
+                    margin-right: 10%;
+                    background-color: #EABF48;
+                }
+                &:nth-of-type(2){
+                    width: 10%;
+                    height: 100%;
+                    background-color: #EABF48;
+                }   
+            }
+        }
+        &:nth-of-type(2){
+            div{
+                &:first-of-type{
+                    width: 20%;
+                    height: 100%;
+                    margin-right: 10%;
+                    background-color: #EABF48;
+                }
+                &:nth-of-type(2){
+                    width: 80%;
+                    height: 100%;
+                    background-color: #EABF48;
+                }   
+            }
+        }
+    }
+    h1{
+        color: #5F769C;
+        font-size: 25px;
+        font-weight: 500;
+        margin: 15px 0px;
+        text-align: center;
+    }
+}

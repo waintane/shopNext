@@ -1,13 +1,77 @@
 .productPage{
-    display: flex;
-    .imgContainer{
-        object-fit: cover;
-        width: 40%;
-        height: 80vh;
-        img{
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
+    overflow-x: hidden;
+    .main{
+        width: 93vw;
+        padding-top: 100px;
+        margin: 0px auto;
+        display: flex;
+        .imgContainer{
+            width: 30%;
+            height: 70vh;
+            img{
+                object-fit: cover;
+                object-position: top;
+                width: 100%;
+                height: 100%;
+            }
         }
+        .content{
+            width: 50%;
+            padding-left: 5%;
+            
+            h1{
+                font-size: 28px;
+            }
+            h3{
+                font-size: 22px;
+                font-weight: 400;
+            }
+            select{
+                margin: 20px 0px;
+                background-color: #324565;
+                padding: 5px 20px;
+                color: white;
+                font-size: 17px;
+            }
+            .description{
+                margin: 20px 0px;
+            }
+            .formEnd{
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+                p{
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+                button{
+                    background-color: #324565;
+                    padding: 5px 20px;
+                    color: white;
+                    font-size: 17px;
+    
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .accueilMsg{
+        margin: 55px 0px 40px 0px;
+        background-color: #5F769C;
+        width: 100vw;
+        padding: 20px 0px 20px 3.5vw;
+        color: white;
+        h3{
+            font-size: 22px;
+            font-weight: 400;
+        }
+    }
+    .recommendation{
+        width: 93vw;
+        margin: 0px auto;
+        display: flex;
+        flex-wrap: wrap;
     }
 }

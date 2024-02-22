@@ -1,4 +1,46 @@
 .homePage{
-    display: flex;
-    flex-wrap: wrap;
+    padding-top: 50px;
+    overflow-x: hidden;
+    .banniere{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        margin-bottom: 100px;
+        .visuel{
+            width: 100%;
+            background-color: #324565;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .sousBanniere{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #324565;
+            padding-bottom: 5px;
+            p{
+                color: white;
+            }
+        }
+    }
+    .accueilMsg{
+        background-color: #5F769C;
+        width: 65vw;
+        padding: 20px 0px 20px 3.8vw;
+        color: white;
+        h3{
+            font-size: 22px;
+            font-weight: 400;
+        }
+    }
+    .itemSection{
+        margin: 0px auto;
+        width: 93vw;
+        display: flex;
+        flex-wrap: wrap;    
+        justify-content: space-between;
+    }
 }
