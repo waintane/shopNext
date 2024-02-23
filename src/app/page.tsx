@@ -5,6 +5,7 @@ import ProductCard from "@/lib/components/productCard";
 import styles from "../style/components/homePage.module.scss";
 import banniere from "../img/banniere.png";
 import Title from "@/lib/components/title";
+import BannerPoint from "@/lib/components/bannerPoint";
 
 export default async function Home() {
     const products = await prisma.product.findMany({
@@ -35,6 +36,7 @@ export default async function Home() {
             <ProductCard product={e} key={e.id}></ProductCard>
           ))}
         </section>
+        <BannerPoint></BannerPoint>
       </main>
     );
 }

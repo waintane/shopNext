@@ -58,6 +58,7 @@ model Product {
   quantityLarge Int?
   category      String
   sex           String?
+  special       Int?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

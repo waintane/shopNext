@@ -1,0 +1,29 @@
+.sexPage{
+    padding-top: 50px;
+    overflow-x: hidden;
+    .banniere{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        margin-bottom: 100px;
+        .visuel{
+            width: 100%;
+            background-color: #324565;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .sousBanniere{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #324565;
+            padding-bottom: 5px;
+            p{
+                color: white;
+            }
+        }
+    }
+}

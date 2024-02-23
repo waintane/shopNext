@@ -30,9 +30,7 @@ export default function ProductFilter({products}:productsProps){
                     <button type="submit">search</button>
                 </form>
             </div>
-            {products.map(e => (
-                    <ProductPanel product={e} key={e.id}></ProductPanel>
-            ))}
+
         </div>
     )
 }
