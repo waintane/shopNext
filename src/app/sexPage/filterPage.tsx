@@ -25,7 +25,7 @@ export default function FilterPage({categories, sex}:filterProps){
             <div className={styles.option}>
                 <ul>
                 {categories.map(e => (
-                    <li>
+                    <li key={e.id}>
                         <form action={queryFilter}>
                             <input type="text" value={sex} name="sex" style={{display: 'none'}}/>
                             <input type="text" value={e.name} name="category" style={{display: 'none'}}/>

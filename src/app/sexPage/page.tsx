@@ -6,12 +6,19 @@ import Title from "@/lib/components/title";
 import ProductCard from "@/lib/components/productCard";
 import { redirect } from "next/navigation";
 import FilterPage from "./filterPage";
+import BannerPoint from "@/lib/components/bannerPoint";
 
 interface searchParamsProps {
     searchParams : {sex:string, category:string},
 }
 
+export async function reset(formData:FormData){
+    "use server";
 
+    const sex = formData.get("sex")?.toString();
+
+    redirect("./sexPage?sex=" + `${sex}`);
+}
 
 export default async function SexPage({searchParams: {sex, category}} : searchParamsProps){
 
@@ -48,6 +55,7 @@ export default async function SexPage({searchParams: {sex, category}} : searchPa
 
     return(
         <div className={styles.sexPage}>
+
             <div className={styles.banniere}>
                 <div className={styles.visuel}>
                     <div><img src={sex=="femme"?bannerFemme.src : bannerHomme.src} alt="" /></div>
@@ -58,18 +66,25 @@ export default async function SexPage({searchParams: {sex, category}} : searchPa
                     <p>Livraison rapide</p>
                 </div>
             </div>
-            <Title> Nos produits {sex==null?"" : "pour"} {sex=="homme"?"homme" : ""} {sex=="femme"?"femme" : ""}</Title>
-            <h2> {category==null? "Tout": category} </h2>
+
+            <Title> NOS PRODUITS {sex==null?"" : "POUR"} {sex=="homme"?"HOMME" : ""} {sex=="femme"?"FEMME" : ""}</Title>
+
+            <h2 className={styles.category}> {category==null? "TOUT": category.toUpperCase()} </h2>
+
             <section>
                 <div className={styles.filter}>
                     <FilterPage categories={categories} sex={sex}></FilterPage>
                 </div>
                 <div className={styles.itemSection}>
-                    {products.map(e => (
-                        <ProductCard product={e} key={e.id}></ProductCard>
-                    ))}
+                    <div className={styles.line}> {category? <form action={reset} > <input type="text" value={sex} name="sex" style={{display: 'none'}}  /> <button type="submit"> {category? category + " x" : ""} </button></form> : ""} </div>
+                    <div className={styles.catalog}>
+                        {products.map(e => (
+                            <ProductCard product={e} key={e.id}></ProductCard>
+                        ))}
+                    </div>
                 </div>
             </section>
+            <BannerPoint></BannerPoint>
         </div>
     )
 }

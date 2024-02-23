@@ -1,10 +1,11 @@
 .sexPage{
+    width: 100vw;
     padding-top: 50px;
-    overflow-x: hidden;
     .banniere{
         display: flex;
         flex-direction: column;
         width: 100vw;
+        overflow-x: hidden;
         margin-bottom: 100px;
         .visuel{
             width: 100%;
@@ -23,6 +24,48 @@
             padding-bottom: 5px;
             p{
                 color: white;
+            }
+        }
+    }
+    .category{
+        margin: 20px 0px 20px 3.2vw;
+        font-size: 30px;
+        color:  #5F769C;
+    }
+    section{
+        width: 93vw;
+        margin: 0pc auto;
+        display: grid;
+        grid-template-columns: 0.3fr 1fr;
+
+        .itemSection{
+            display: flex;
+            flex-direction: column;
+
+            .line{
+                height: 40px;
+                width: 100%;
+                margin-bottom: 40px;
+                background-color: #324565;
+
+                display: flex;
+                align-items: center;
+
+                button{
+                    background-color:#5F769C;
+                    padding: 5px 10px;
+                    border: none;
+                    color: white;
+                    font-size: 20px;
+                    margin-left: 30px;
+
+                    cursor: pointer;
+                }
+            }
+
+            .catalog{
+                display: flex;
+                flex-wrap: wrap;
             }
         }
     }

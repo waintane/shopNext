@@ -1,3 +1,5 @@
+import styles from "../../style/components/dashboard.module.scss"
+
 type user = {
     user:{name?: string | null | undefined,
         email?:string | null | undefined,
@@ -6,7 +8,7 @@ type user = {
 
 export default function DashboardContent({user}:user){
     return(
-        <div>
+        <div className={styles.content}>
             <h2>Tableau de bord</h2>
             <p>Bonjour {user?.name} </p>
         </div>

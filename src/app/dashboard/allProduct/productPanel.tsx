@@ -34,7 +34,6 @@ export default function ProductPanel({product}:productsPanelProps){
             <img src={product.imageUrl} alt={product.name} />
             <p> {product.name} </p>
             <p>Categorie: {product.category} </p>
-            <p>Quantité: {product.quantity} </p>
             <input style={{display: 'none'}} type="text" value={product.id} name="id" />
             <button type="submit">x</button>
         </form>

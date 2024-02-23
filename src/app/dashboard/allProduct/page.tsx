@@ -42,7 +42,12 @@ export default async function AllProduct({searchParams: {query}}: searchParamsPr
     return(
         <div className={styles.dashboardPage}>
             <HeaderDashboard></HeaderDashboard>
-            <ProductFilter products={products}></ProductFilter>
+            <div>   
+                <ProductFilter products={products}></ProductFilter>
+                {products.map(e => (
+                    <ProductPanel product={e}  key={e.id}></ProductPanel>
+                ))}
+            </div>
         </div>
     )
 }

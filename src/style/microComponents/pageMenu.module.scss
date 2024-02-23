@@ -1,6 +1,10 @@
 .pageMenu{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+
     background-color: #5F769C;
-    width: clamp(100px, 19vw, 1000px);
+    width: clamp(250px, 19vw, 1000px);
     padding: 10px 30px;
     border-left: 4px solid  #324565;
     h3{
