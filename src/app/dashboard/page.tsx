@@ -8,14 +8,11 @@ import HeaderDashboard from "./headerDashboard";
 import DashboardContent from "./dashboardContent";
 import styles from "../../style/components/dashboard.module.scss";
 
-type user = {
-    name?: string | null | undefined,
-    email?: string | null | undefined,
-    image?: string | null | undefined,
-    status?: string | null | undefined,
+interface searchProps {
+    searchParams : {query:string}
 }
 
-export default async function DashBoardPage(){
+export default async function DashBoardPage({searchParams: {query}}:searchProps){
 
     const session:any = await getServerSession(authOptions);
     const user = await session?.user;
@@ -27,7 +24,7 @@ export default async function DashBoardPage(){
     return(
         <div className={styles.dashboardPage}>
             <HeaderDashboard></HeaderDashboard>
-            <DashboardContent user={user}></DashboardContent>
+            <DashboardContent user={user} query={query}></DashboardContent>
         </div>
     )
 }

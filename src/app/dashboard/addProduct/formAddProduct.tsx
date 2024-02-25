@@ -1,10 +1,13 @@
-import { Categories } from "@prisma/client";
+import { Categories, User } from "@prisma/client";
 import { prisma } from "@/lib/db/prisma";
 import FormSubmitButton from "@/lib/components/formSubmitButton";
 import { redirect } from "next/navigation";
+import styles from "../../../style/microComponents/formProduct.module.scss";
+import DashboardEntete from "@/lib/components/dashboardEntete";
 
 type FormAddProductProps = {
-    categories : Categories[]
+    categories : Categories[],
+    user: User
 }
 
 async function addProduct(formData:FormData){
@@ -31,17 +34,17 @@ async function addProduct(formData:FormData){
     redirect("./addProduct");
 }
 
-export default function FormAddProduct({categories}:FormAddProductProps){
+export default function FormAddProduct({categories, user}:FormAddProductProps){
     return(
-        <div>
-            <h1>Add product</h1>
+        <div className={styles.formProduct}>
+            <DashboardEntete user={user}>AJOUTER UN PRODUIT</DashboardEntete>
             <form action={addProduct}>
                 <div>
                     <label htmlFor="name">Nom du produit: </label>
                     <input required type="text" name="name" id="name" placeholder="Name"/>
                 </div>
                 <div>
-                    <label htmlFor="description">Description of the product: </label>
+                    <label htmlFor="description">Description du produit: </label>
                     <textarea required name="description" id="description" placeholder="Description"></textarea>
                 </div>
                 <div>
@@ -66,15 +69,15 @@ export default function FormAddProduct({categories}:FormAddProductProps){
                 </div>
                 <div>
                     <label htmlFor="quantitySmall">Quantité petit en stock : </label>
-                    <input required type="text" name="quantitySmall" id="quantitySmall" placeholder="quantity petit"/>
+                    <input required type="number" name="quantitySmall" id="quantitySmall" placeholder="quantité petit"/>
                 </div>
                 <div>
                     <label htmlFor="quantityMedium">Quantité medium en stock : </label>
-                    <input required type="text" name="quantityMedium" id="quantityMedium" placeholder="quantity medium"/>
+                    <input required type="number" name="quantityMedium" id="quantityMedium" placeholder="quantité medium"/>
                 </div>
                 <div>
                     <label htmlFor="quantityLarge">Quantité large en stock : </label>
-                    <input required type="text" name="quantityLarge" id="quantityLarge" placeholder="quantity large"/>
+                    <input required type="number" name="quantityLarge" id="quantityLarge" placeholder="quantité large"/>
                 </div>
                 <div>
                     <label htmlFor="price">Prix du produit: </label>

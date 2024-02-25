@@ -1,11 +1,14 @@
 
-import { Product } from "@prisma/client";
+import { Product, User } from "@prisma/client";
 import ProductPanel from "./productPanel";
 import { redirect } from "next/navigation";
+import styles from "../../../style/components/allProductContent.module.scss";
+import DashboardEntete from "@/lib/components/dashboardEntete";
 
-interface productsProps {
-    products: Product[]
+interface filterProps{
+    user: User
 }
+
 export async function querySearch(formData:FormData){
     "use server";
 
@@ -17,14 +20,13 @@ export async function querySearch(formData:FormData){
     redirect("./allProduct?query=" + `${query}`);
 }
 
-
-
-
-export default function ProductFilter({products}:productsProps){
+export default function ProductFilter({user}:filterProps){
 
     return(
-        <div>
-            <div>
+        <div className={styles.content}>
+            <DashboardEntete user={user}>VOIR LES PRODUITS</DashboardEntete>
+
+            <div className={styles.search}>
                 <form action={querySearch}>
                     <input type="text" name="search" id="search"/>
                     <button type="submit">search</button>

@@ -8,6 +8,7 @@ import Link from "next/link";
 import HeaderDashboard from "../headerDashboard";
 import styles from "../../../style/components/dashboard.module.scss";
 import FormAddProduct from "./formAddProduct";
+import DashboardEntete from "@/lib/components/dashboardEntete";
 
 export default async function AddProduct(){
     const session:any = await getServerSession(authOptions);
@@ -21,7 +22,7 @@ export default async function AddProduct(){
     return(
         <div className={styles.dashboardPage}>
             <HeaderDashboard></HeaderDashboard>
-            <FormAddProduct categories={categories}></FormAddProduct>
+            <FormAddProduct user={user} categories={categories}></FormAddProduct>
         </div>
     )
 }

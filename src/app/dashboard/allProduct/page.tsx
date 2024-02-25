@@ -19,7 +19,7 @@ export default async function AllProduct({searchParams: {query}}: searchParamsPr
     if(user?.status != "admin"){
         redirect("/");
     }
-    let products:any;
+    let products:Product[] = [];
 
     if(!query){
         products = await prisma.product.findMany({
@@ -43,7 +43,7 @@ export default async function AllProduct({searchParams: {query}}: searchParamsPr
         <div className={styles.dashboardPage}>
             <HeaderDashboard></HeaderDashboard>
             <div>   
-                <ProductFilter products={products}></ProductFilter>
+                <ProductFilter user={user}></ProductFilter>
                 {products.map(e => (
                     <ProductPanel product={e}  key={e.id}></ProductPanel>
                 ))}

@@ -1,0 +1,52 @@
+.formProduct{
+    margin-left: 18vw;
+    width: 100%;
+
+    form{
+        margin-top: 30px;
+        width: 76vw;
+        margin-left: 2vw;
+        div{
+            margin-top: 10px;
+            display: flex;
+            padding-bottom: 10px;
+            label{
+                width: clamp(230px, 10%,400px);
+                font-size: 16px;
+            }
+            input{
+                height: 25px;
+                width: 83%;
+                text-indent: 5px;
+                font-size: 16px;
+            }
+            textarea{
+                text-indent: 5px;
+                height: 80px;
+                width: 83%;
+                font-size: 16px;
+            }
+            select{
+                background-color: #324565;
+                width: 140px;
+                height: 30px;
+                color: white;
+                font-size: 16px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        button{
+            border: none;
+            background-color: #324565;
+            width: 140px;
+            height: 30px;
+            color: white;
+            font-size: 16px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

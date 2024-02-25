@@ -1,5 +1,5 @@
 import { Categories, Product } from "@prisma/client"
-import styles from "../../../style/components/categoryPanel.module.scss";
+import styles from "../../../style/components/allProductContent.module.scss";
 import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
 
@@ -29,18 +29,20 @@ async function updateItem(formData:FormData){
 
 export default function ProductPanel({product}:productsPanelProps){
     return(
-        <div>
-        <form action={removeCategory} className={styles.panel}>
-            <img src={product.imageUrl} alt={product.name} />
-            <p> {product.name} </p>
-            <p>Categorie: {product.category} </p>
-            <input style={{display: 'none'}} type="text" value={product.id} name="id" />
-            <button type="submit">x</button>
-        </form>
-        <form action={updateItem}>
-            <input style={{display: 'none'}} type="text" value={product.id} name="id" />
-            <button type="submit">Modifier</button>
-        </form>
+        <div className={styles.content}>
+            <div className={styles.panel}>
+                <img src={product.imageUrl} alt={product.name} />
+                    <p> {product.name} </p>
+                    <p>Categorie: {product.category} </p>
+                <form action={updateItem} >
+                    <input style={{display: 'none'}} type="text" value={product.id} name="id" />
+                    <button type="submit">Modifier</button>
+                </form>
+                <form action={removeCategory} >
+                    <input style={{display: 'none'}} type="text" value={product.id} name="id" />
+                    <button type="submit">x</button>
+                </form>
+            </div>
         </div>
     )
 }
