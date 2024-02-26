@@ -1,6 +1,6 @@
-import { Categories } from "@prisma/client"
-import styles from "../../../style/components/categoryPanel.module.scss";
+import { Categories } from "@prisma/client";
 import { prisma } from "@/lib/db/prisma";
+import styles from "../../../style/components/categoryPage.module.scss";
 import { redirect } from "next/navigation";
 
 interface categoriesPanelProps {
@@ -19,10 +19,12 @@ async function removeCategory(formData:FormData){
 
 export default function CategoriesPanel({category}:categoriesPanelProps){
     return(
-        <form action={removeCategory} className={styles.panel}>
-            <p> {category.name.charAt(0).toUpperCase() + category.name.slice(1)} </p>
-            <input style={{display: 'none'}} type="text" value={category.id} name="id" />
-            <button type="submit">x</button>
-        </form>
+        <div className={styles.content}>
+            <form action={removeCategory} className={styles.panel}>
+                <p> {category.name.charAt(0).toUpperCase() + category.name.slice(1)} </p>
+                <input style={{display: 'none'}} type="text" value={category.id} name="id" />
+                <button type="submit">x</button>
+            </form>
+        </div>
     )
 }

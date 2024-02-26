@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
+import styles from "../../../style/components/categoryPage.module.scss";
 
 async function createCategory(formData:FormData){
     "use server";
@@ -18,9 +19,11 @@ async function createCategory(formData:FormData){
 
 export default async function AddCategory(){
     return(
-        <form action={createCategory}>
-            <input required type="text" name="category" placeholder="category"/>
-            <button type="submit">nouvelle categorie</button>
-        </form>
+        <div className={styles.content}>
+            <form action={createCategory} className={styles.addCategory}>
+                <input required type="text" name="category" placeholder="category"/>
+                <button type="submit">nouvelle categorie</button>
+            </form>
+        </div>
     )
 } 

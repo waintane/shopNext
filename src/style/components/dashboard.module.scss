@@ -6,4 +6,15 @@
     .content{
         width: 100%;
     }
+    .baby{
+        margin-left: 18vw;
+        width: 100%;
+
+        .categories{
+            margin-left: 2vw;
+            width: 76vw;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
 }

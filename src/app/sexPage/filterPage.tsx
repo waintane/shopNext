@@ -1,15 +1,8 @@
+"use client"
+
 import { Categories } from "@prisma/client";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import styles from "../../style/microComponents/pageMenu.module.scss";
-
-export async function queryFilter(formData:FormData){
-    "use server";
-
-    const sex = formData.get("sex")?.toString();
-    const category = formData.get("category")?.toString();
-    
-    redirect("./sexPage?sex=" + `${sex}` + "&category=" + `${category}`);
-}
 
 interface filterProps{
     categories : Categories[],
@@ -18,6 +11,15 @@ interface filterProps{
 
 
 export default function FilterPage({categories, sex}:filterProps){
+    const router = useRouter();
+
+    function queryFilter(value:string){
+
+        const sex = document.querySelector(`.${value}`+" .sex")?.innerHTML;
+        const category = document.querySelector(`.${value}`+" .category")?.innerHTML;
+
+        router.push("./sexPage?sex="+ `${sex}` + "&category=" + `${category}`, { scroll: false });
+    }
 
     return(
         <div className={styles.pageMenu}>
@@ -25,12 +27,10 @@ export default function FilterPage({categories, sex}:filterProps){
             <div className={styles.option}>
                 <ul>
                 {categories.map(e => (
-                    <li key={e.id}>
-                        <form action={queryFilter}>
-                            <input type="text" value={sex} name="sex" style={{display: 'none'}}/>
-                            <input type="text" value={e.name} name="category" style={{display: 'none'}}/>
-                            <button type="submit"> {e.name.toUpperCase()} </button>
-                        </form>
+                    <li key={e.id} className={e.name}>
+                        <p className="sex"style={{display: 'none'}}>{sex}</p>
+                        <p className="category"style={{display: 'none'}}>{e.name}</p>
+                        <button onClick={() => queryFilter(e.name)}> {e.name.toUpperCase()} </button>
                     </li>
                  ))}
                 </ul>

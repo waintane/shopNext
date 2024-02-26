@@ -6,17 +6,17 @@
         width: 76vw;
         display: flex;
         img{
-            width: 3.3vw;
-            height: 3.3vw;
-            margin-right: 0.2vw;
+            width: 3.5vw;
+            height: 3.5vw;
+            margin-right: 1vw;
         }
         .panel{
-            width: 76vw;
+            width: 75vw;
             height: 3.5vw;
             display: flex;
             align-items: center;
             border-bottom: 2px solid gray;
-
+            margin-bottom: 5px;
             .forms{
                 width: 20%;
                 display: flex;
@@ -43,13 +43,14 @@
         }
     }
     .heading{
-        margin: 50px 0px 20px 3.5vw;
+        margin: 50px 0px 20px 4.5vw;
         .panel{
-            width: 72.5vw;
+            width: 71.5vw;
         }
         h4{
             width: 28.8%;
             font-size: 18px;
+            overflow-x: hidden;
         }
         form{
             width: 50%;

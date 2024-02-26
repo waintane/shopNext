@@ -7,6 +7,7 @@ import ProductCard from "@/lib/components/productCard";
 import { redirect } from "next/navigation";
 import FilterPage from "./filterPage";
 import BannerPoint from "@/lib/components/bannerPoint";
+import RemoveRefreshButton from "@/lib/components/removeRefreshButton";
 
 interface searchParamsProps {
     searchParams : {sex:string, category:string},
@@ -76,7 +77,8 @@ export default async function SexPage({searchParams: {sex, category}} : searchPa
                     <FilterPage categories={categories} sex={sex}></FilterPage>
                 </div>
                 <div className={styles.itemSection}>
-                    <div className={styles.line}> {category? <form action={reset} > <input type="text" value={sex} name="sex" style={{display: 'none'}}  /> <button type="submit"> {category? category + " x" : ""} </button></form> : ""} </div>
+                    {/* <div className={styles.line}> {category? <form action={reset} > <input type="text" value={sex} name="sex" style={{display: 'none'}}  /> <button type="submit"> {category? category + " x" : ""} </button></form> : ""} </div> */}
+                    <RemoveRefreshButton category={category} sex={sex}></RemoveRefreshButton>
                     <div className={styles.catalog}>
                         {products.map(e => (
                             <ProductCard product={e} key={e.id}></ProductCard>
