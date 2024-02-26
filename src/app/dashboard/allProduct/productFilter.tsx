@@ -25,14 +25,19 @@ export default function ProductFilter({user}:filterProps){
     return(
         <div className={styles.content}>
             <DashboardEntete user={user}>VOIR LES PRODUITS</DashboardEntete>
-
-            <div className={styles.search}>
-                <form action={querySearch}>
-                    <input type="text" name="search" id="search"/>
-                    <button type="submit">search</button>
-                </form>
+            <div className={styles.container}>
+                <div className={styles.heading}>
+                    <div className={styles.panel}>
+                        <h4>Produit</h4>
+                        <h4>Categories</h4>
+                        <form action={querySearch}>
+                            <h4>Prix</h4>
+                            <input type="text" name="search" id="search" placeholder="rechercher"/>
+                            <button type="submit" style={{display:"none"}}>search</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-
         </div>
     )
 }

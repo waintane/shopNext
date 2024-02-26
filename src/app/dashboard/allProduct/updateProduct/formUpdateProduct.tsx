@@ -3,6 +3,8 @@ import styles from "../../../../style/components/productUpdate.module.scss";
 import { prisma } from "@/lib/db/prisma";
 import FormSubmitButton from "@/lib/components/formSubmitButton";
 import { redirect } from "next/navigation";
+import DashboardEntete from "@/lib/components/dashboardEntete";
+import Link from "next/link";
 
 interface productProps {
     product: Product
@@ -38,7 +40,9 @@ export default async function FormUpdateProduct({product}:productProps){
 
     return(
         <div className={styles.productUpdate}>
-            <h2> {product.name} </h2>
+            <DashboardEntete user={{}}>MODIFIER LE PRODUIT</DashboardEntete>
+            <Link href="./">retour</Link>
+            <h2 className={styles.productName}> {product.name} </h2>
             <div className={styles.productDisplayForm}>
                 <div className={styles.containerImage}>
                     <img src={product.imageUrl} alt={product.name} />

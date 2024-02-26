@@ -30,18 +30,23 @@ async function updateItem(formData:FormData){
 export default function ProductPanel({product}:productsPanelProps){
     return(
         <div className={styles.content}>
-            <div className={styles.panel}>
+            <div className={styles.container}>
                 <img src={product.imageUrl} alt={product.name} />
-                    <p> {product.name} </p>
-                    <p>Categorie: {product.category} </p>
-                <form action={updateItem} >
-                    <input style={{display: 'none'}} type="text" value={product.id} name="id" />
-                    <button type="submit">Modifier</button>
-                </form>
-                <form action={removeCategory} >
-                    <input style={{display: 'none'}} type="text" value={product.id} name="id" />
-                    <button type="submit">x</button>
-                </form>
+                <div className={styles.panel}>
+                        <p> {product.name} </p>
+                        <p>Categorie: {product.category} </p>
+                        <p> {(product.price/100)} </p>
+                    <div className={styles.forms}>
+                        <form action={updateItem} >
+                            <input style={{display: 'none'}} type="text" value={product.id} name="id" />
+                            <button type="submit">Modifier</button>
+                        </form>
+                        <form action={removeCategory} >
+                            <input style={{display: 'none'}} type="text" value={product.id} name="id" />
+                            <button type="submit" className={styles.delete}>x</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     )

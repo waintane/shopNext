@@ -34,7 +34,6 @@ export default async function updateProduct({searchParams: {target}}: searchPara
         <div className={styles.dashboardPage}>
             <HeaderDashboard></HeaderDashboard>
             <div>
-                <Link href="./">retour</Link>
                 <FormUpdateProduct product={product} key={product.id}></FormUpdateProduct>
             </div>
         </div>
