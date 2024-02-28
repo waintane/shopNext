@@ -6,6 +6,8 @@ import styles from "../style/components/homePage.module.scss";
 import banniere from "../img/banniere.png";
 import Title from "@/lib/components/title";
 import BannerPoint from "@/lib/components/bannerPoint";
+import manteauHomme from "../img/ManteauHomme.jpg";
+import manteauFemme from "../img/ManteauFemme.jpg";
 
 export default async function Home() {
     const products = await prisma.product.findMany({
@@ -31,6 +33,24 @@ export default async function Home() {
         </div>
 
         <Title>NOS MANTEAUX</Title>
+
+        <div className={styles.showcase}>
+          <div className={styles.division}>
+            <Link href={"/sexPage?sex=femme&category=manteau"} className={styles.containerShowcase}>
+              <img src={manteauFemme.src} alt="manteau pour femme" />
+              <h3>MANTEAU POUR FEMME</h3>
+              <button>FEMME</button>
+            </Link>
+            <Link href={"/sexPage?sex=homme&category=manteau"} className={styles.containerShowcase}>
+              <img src={manteauHomme.src} alt="manteau pour homme" />
+              <h3>MANTEAU POUR HOMME</h3>
+              <button>HOMME</button>
+            </Link>
+          </div>
+        </div>
+
+        <Title>RECEMENT VISITÉ</Title>
+
         <section className={styles.itemSection}>
           {products.map(e => (
             <ProductCard product={e} key={e.id}></ProductCard>

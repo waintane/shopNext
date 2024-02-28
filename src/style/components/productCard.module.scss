@@ -9,6 +9,10 @@
     text-decoration: none;
     color: black;
     position: relative;
+    transition: 0.2s;
+    &:hover{
+        transform: scale(1.01);
+    }
     .card{
         height: 98%;
         width: 95%;

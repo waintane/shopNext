@@ -1,0 +1,54 @@
+.cart{
+    padding-top: 60px;
+    .panelContainer{
+        display: flex;
+        width: 80vw;
+        margin: 0px auto;
+
+        .remove{
+            margin-top: 20px;
+            height: 5vw;
+            width: 40px;
+            border: none;
+            background-color:  #5F829C;
+            color: white;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .heading{
+        width: 80vw;
+        margin: 0px auto;
+        padding-bottom: 20px;
+        border-bottom: 20px solid #324565;
+        display: flex;
+        h4{
+            width: 15%;
+            font-size: 20px;
+            &:first-of-type{
+                margin-left: 5vw;
+                width: 28.5%;
+            }
+        }
+    }
+    .panel{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        background-color:  #324565;
+        color: white;
+        img{
+            width: 5vw;
+            height: 5vw;
+        }
+        p{
+            padding-left: 5px;
+            width: 15%;
+            &:first-of-type{
+                width: 30%;
+            }
+        }
+    }
+}

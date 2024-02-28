@@ -3,12 +3,65 @@
     position: fixed;
     background-color: #5F829C;
     display: flex;
-    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
     width: 100vw;
+    padding: 0px 4vw;
     overflow-x: hidden;
     gap: 30px;
+    .separation{
+        width: 20%;
+        display: flex;
+        gap: 20px;
+        &:nth-of-type(2){
+            display: flex;
+            justify-content: end;
+        }
+        form{
+            display: flex;
+            align-items: center;
+        }
+    }
     a{
         text-decoration: none;
         color: white;
+        font-size: 18px;
+
+        &:hover{
+            color: #EABF48;
+        }
+    }
+    .title{
+        font-size: 25px;
+    }
+    div{
+        display: flex;
+    }
+    .cart{
+        transition: 0.2s;
+        position: fixed;
+        top: 90vh;
+        font-size: 20px;
+        padding: clamp(10px,1vw,30px);
+        border-radius: 20px;
+        background-color: #5F829C;
+
+        &:hover{
+            background-color: #324565;
+        }
+    }
+    .login{
+        width: 50px;
+        height: 50px;
+        background-color: #324565;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        svg{
+            width: 30px;
+            height: 30px;
+        }
     }
 }

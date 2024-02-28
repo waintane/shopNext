@@ -1,3 +1,5 @@
+"use server";
+
 import { prisma } from "@/lib/db/prisma";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -6,6 +8,7 @@ import styles from "../../../style/components/productPage.module.scss";
 import ProductCard from "@/lib/components/productCard";
 import Title from "@/lib/components/title";
 import BannerPoint from "@/lib/components/bannerPoint";
+import { cookies } from 'next/headers';
 
 interface productPageProps {
     params: {
@@ -19,10 +22,72 @@ const getProduct = cache(async (id:string) => {
     return product;
 })
 
+export async function addToCart(formData:FormData){
+    "use server";
+
+    const size = formData.get("size")?.toString();
+    const productId = formData.get("id")?.toString();
+
+    let currentCart = cookies().get("cart");
+
+    if(currentCart){
+        let array = JSON.parse(currentCart?.value!);
+
+        let state = false;
+
+        array.map(e => {
+            if(e.id == productId){
+                e.quantity += 1;
+                state = true;
+                return;
+            }
+        })
+        if(!state){
+            array.push({size: size, id: productId, quantity: 1});
+        }
+        cookies().set("cart", JSON.stringify(array));
+    }else{
+        let element = JSON.stringify([{size: size, id: productId ,quantity: 1}]);
+
+        cookies().set("cart", element);
+    }
+}
+export async function checkCookiesItem(id:string){
+    "use server";
+    // console.log(id)
+    // let itemWatchedState = false;
+    // let itemWatched = await cookies().get("lastWatched");
+
+    // let element = JSON.stringify([{id:id}]);
+
+    // cookies().set("lastWatched", JSON.stringify(id));
+
+    // if(itemWatched){
+    //     let array = JSON.parse(itemWatched?.value!);
+        
+    //     for(let i=1; i<array.length; i++){
+    //         if(array[i].id == id){
+    //             itemWatchedState = true;
+    //             return;
+    //         }
+    //     }
+    //     if(!itemWatchedState){
+    //         array.push({id:id});
+
+    //         cookies().set("lastWatched", JSON.stringify(array));
+    //         console.log(array);
+    //     }
+    // }else{
+    //     let element = JSON.stringify([{id:id}]);
+
+    //     cookies().set("lastWatched", JSON.stringify(element));
+    // }
+}
+
 export async function generateMetadata({params: {id}}: productPageProps): Promise<Metadata> {
 
     const product = await getProduct(id);
-
+    
     return {
         title: product.name + " - shopNext",
         description: product.description,
@@ -40,7 +105,9 @@ export default async function Products({params: {id}}: productPageProps){
         where: {category : product.category},
         take: 4,
 
-    })
+    });
+
+    // checkCookiesItem(id);
 
     return(
         <div className={styles.productPage}>
@@ -49,18 +116,19 @@ export default async function Products({params: {id}}: productPageProps){
                     <img src={product.imageUrl} alt={product.name} />
                 </div>
                 <div className={styles.content}>
-                    <form action="">
+                    <form action={addToCart}>
                         <h1> {product.name} </h1>
                         <select name="size" id="size">
                             <option value="small">Petit</option>
                             <option value="medium">Medium</option>
                             <option value="large">Large</option>
                         </select>
+                        <input type="text" name="id" value={id} style={{display:"none"}}/>
                         <h3> Categorie:  {product.category} </h3>
                         <p className={styles.description}> {product.description} </p>
                         <div className={styles.formEnd}>
                             <p> {(product.price) / 100}$ </p>
-                            <button> Ajouter au panier </button>
+                            <button type="submit"> Ajouter au panier </button>
                         </div>
                     </form>
                 </div>
