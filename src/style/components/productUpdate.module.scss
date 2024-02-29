@@ -21,7 +21,7 @@
                 object-position: top;
             }
         }
-        form{
+        .formContainer{
             width: 56vw;
             margin-left: 2vw;
             div{
@@ -55,16 +55,16 @@
                     }
                 }
             }
-            button{
-                border: none;
-                background-color: #324565;
-                width: 140px;
-                height: 30px;
-                color: white;
-                font-size: 16px;
-                &:hover{
-                    cursor: pointer;
-                }
+        }
+        button{
+            border: none;
+            background-color: #324565;
+            width: 140px;
+            height: 30px;
+            color: white;
+            font-size: 16px;
+            &:hover{
+                cursor: pointer;
             }
         }
     }

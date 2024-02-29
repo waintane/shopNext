@@ -10,7 +10,7 @@ export default function SearchHeader(){
     function search(e:any){
         setQuery(e.target.value);
 
-        router.push("/searchPage?query=" + `${query}`);
+        router.push("/searchPage?query=" + `${e.target.value}`);
     }
 
     return(
