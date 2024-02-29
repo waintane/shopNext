@@ -52,37 +52,7 @@ export async function addToCart(formData:FormData){
         cookies().set("cart", element);
     }
 }
-export async function checkCookiesItem(id:string){
-    "use server";
-    // console.log(id)
-    // let itemWatchedState = false;
-    // let itemWatched = await cookies().get("lastWatched");
 
-    // let element = JSON.stringify([{id:id}]);
-
-    // cookies().set("lastWatched", JSON.stringify(id));
-
-    // if(itemWatched){
-    //     let array = JSON.parse(itemWatched?.value!);
-        
-    //     for(let i=1; i<array.length; i++){
-    //         if(array[i].id == id){
-    //             itemWatchedState = true;
-    //             return;
-    //         }
-    //     }
-    //     if(!itemWatchedState){
-    //         array.push({id:id});
-
-    //         cookies().set("lastWatched", JSON.stringify(array));
-    //         console.log(array);
-    //     }
-    // }else{
-    //     let element = JSON.stringify([{id:id}]);
-
-    //     cookies().set("lastWatched", JSON.stringify(element));
-    // }
-}
 
 export async function generateMetadata({params: {id}}: productPageProps): Promise<Metadata> {
 

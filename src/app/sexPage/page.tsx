@@ -77,7 +77,6 @@ export default async function SexPage({searchParams: {sex, category}} : searchPa
                     <FilterPage categories={categories} sex={sex}></FilterPage>
                 </div>
                 <div className={styles.itemSection}>
-                    {/* <div className={styles.line}> {category? <form action={reset} > <input type="text" value={sex} name="sex" style={{display: 'none'}}  /> <button type="submit"> {category? category + " x" : ""} </button></form> : ""} </div> */}
                     <RemoveRefreshButton category={category} sex={sex}></RemoveRefreshButton>
                     <div className={styles.catalog}>
                         {products.map(e => (

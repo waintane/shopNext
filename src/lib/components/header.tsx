@@ -11,7 +11,7 @@ export default function Header(){
             </div>
             <Link className={styles.title} href="/">NextShop</Link>
             <div className={styles.separation}>
-                <form action="">
+                <form>
                     <SearchHeader></SearchHeader>
                 </form>
                 <Link className={styles.login} href="/login">                    

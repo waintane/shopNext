@@ -8,12 +8,30 @@ import Title from "@/lib/components/title";
 import BannerPoint from "@/lib/components/bannerPoint";
 import manteauHomme from "../img/ManteauHomme.jpg";
 import manteauFemme from "../img/ManteauFemme.jpg";
+import { cookies } from "next/headers";
+import Carousel from "@/lib/components/carousel";
 
 export default async function Home() {
     const products = await prisma.product.findMany({
       orderBy: {id: "desc"},
     });
 
+    let itemWatched = await cookies().get("lastWatched");
+    let visitedProduct:any =[];
+    if(itemWatched){
+        let array = JSON.parse(itemWatched?.value!);
+
+        if(!Array.isArray(array)){
+          array = JSON.parse(array);
+        }
+        
+        for(let i=0; i<array.length; i++){
+            const product = await prisma.product.findUnique({
+                where : {id : array[i].id}
+            });
+            visitedProduct.push(product);
+        }
+    }
 
     return (
       <main className={styles.homePage}>
@@ -50,6 +68,14 @@ export default async function Home() {
         </div>
 
         <Title>RECEMENT VISITÉ</Title>
+
+        <section>
+          <div>
+            <Carousel products={visitedProduct}></Carousel>
+          </div>
+        </section>
+
+        <Title>AUTRE</Title>
 
         <section className={styles.itemSection}>
           {products.map(e => (
