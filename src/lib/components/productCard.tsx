@@ -23,7 +23,7 @@ export async function checkCookiesItem(formData:FormData){
             array = JSON.parse(array);
         }
         
-        if(array.length < 5){
+        if(array.length < 7){
             for(let i=1; i<array.length; i++){
                 if(array[i].id == id){
                     itemWatchedState = true;
@@ -35,7 +35,7 @@ export async function checkCookiesItem(formData:FormData){
             cookies().set("lastWatched", JSON.stringify(array));
             redirect("/products/"+id);
         }
-        else if(array.length >= 5){
+        else if(array.length >= 7){
             for(let i=1; i<array.length; i++){
                 if(array[i].id == id){
                     itemWatchedState = true;
@@ -60,7 +60,7 @@ export async function checkCookiesItem(formData:FormData){
 
 export default function ProductCard({product}: ProductCardProps){
     return(
-        <form action={checkCookiesItem} className={styles.parent}>
+        <form action={checkCookiesItem} className={styles.parent + " productCard"}>
             <input type="text" style={{display:"none"}} value={product.id} name="product"/>
             <button type="submit">
                 <div className={styles.productCard}>

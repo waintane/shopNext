@@ -1,0 +1,17 @@
+.buttonCarousel{
+    position: absolute;
+    z-index: 100;
+    &:nth-of-type(2){
+        left: 90vw;
+    }
+    button{
+        width: 2vw;
+        height: clamp(400px,29vw,2000px);
+        border: none;
+        background-color: rgba(0, 0, 0, 0.795);
+        color: white;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

@@ -25,7 +25,7 @@ export default function Login(){
     return(
         <div className={styles.registerPage}>
             <form onSubmit={loginUser}>
-                <h1>Connection</h1>
+                <h1>Connexion</h1>
                 <div>
                     <input type="email" name="email" id="email" placeholder="email" required
                     value={data.email}
