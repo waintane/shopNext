@@ -1,6 +1,6 @@
 import styles from "../../style/components/sexPage.module.scss";
-import bannerHomme from "../../img/homme.png";
-import bannerFemme from "../../img/femme.png";
+import bannerHomme from "../../img/homme.jpg";
+import bannerFemme from "../../img/femme.jpg";
 import { prisma } from "@/lib/db/prisma";
 import Title from "@/lib/components/title";
 import ProductCard from "@/lib/components/productCard";
@@ -8,6 +8,7 @@ import { redirect } from "next/navigation";
 import FilterPage from "./filterPage";
 import BannerPoint from "@/lib/components/bannerPoint";
 import RemoveRefreshButton from "@/lib/components/removeRefreshButton";
+import Footer from "@/lib/components/footer";
 
 interface searchParamsProps {
     searchParams : {sex:string, category:string},
@@ -86,6 +87,7 @@ export default async function SexPage({searchParams: {sex, category}} : searchPa
                 </div>
             </section>
             <BannerPoint></BannerPoint>
+            <Footer></Footer>
         </div>
     )
 }

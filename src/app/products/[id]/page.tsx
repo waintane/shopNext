@@ -9,6 +9,7 @@ import ProductCard from "@/lib/components/productCard";
 import Title from "@/lib/components/title";
 import BannerPoint from "@/lib/components/bannerPoint";
 import { cookies } from 'next/headers';
+import Footer from "@/lib/components/footer";
 
 interface productPageProps {
     params: {
@@ -112,6 +113,7 @@ export default async function Products({params: {id}}: productPageProps){
                 ))}
             </div>
             <BannerPoint></BannerPoint>
+            <Footer></Footer>
         </div>
     )
 }

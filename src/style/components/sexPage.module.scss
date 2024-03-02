@@ -5,15 +5,18 @@
         display: flex;
         flex-direction: column;
         width: 100vw;
+        height: 50vh;
         overflow-x: hidden;
         margin-bottom: 100px;
         .visuel{
             width: 100%;
+            height: 46vh;
             background-color: #324565;
             img{
                 width: 100%;
-                height: 100%;
+                height: 46vh;
                 object-fit: cover;
+                object-position: center;
             }
         }
         .sousBanniere{
@@ -68,5 +71,10 @@
                 flex-wrap: wrap;
             }
         }
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .sexPage{
     }
 }

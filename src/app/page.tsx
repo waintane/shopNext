@@ -10,6 +10,7 @@ import manteauHomme from "../img/ManteauHomme.jpg";
 import manteauFemme from "../img/ManteauFemme.jpg";
 import { cookies } from "next/headers";
 import Carousel from "@/lib/components/carousel";
+import Footer from "@/lib/components/footer";
 
 export default async function Home() {
     const products = await prisma.product.findMany({
@@ -83,6 +84,8 @@ export default async function Home() {
           ))}
         </section>
         <BannerPoint></BannerPoint>
+
+        <Footer></Footer>
       </main>
     );
 }

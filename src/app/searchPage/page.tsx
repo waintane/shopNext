@@ -2,6 +2,7 @@ import ProductCard from "@/lib/components/productCard";
 import styles from "../../style/components/searchPage.module.scss";
 import { prisma } from "@/lib/db/prisma";
 import BannerPoint from "@/lib/components/bannerPoint";
+import Footer from "@/lib/components/footer";
 
 interface searchParamsProps {
     searchParams : {query:string}
@@ -38,6 +39,7 @@ export default async function SearchPage({searchParams: {query}}: searchParamsPr
             </section>
             {products?.length==0? <div className={styles.none}><p>aucun produit correspondant</p></div> : ""}
             <BannerPoint></BannerPoint>
+            <Footer></Footer>
         </div>
     )
 }

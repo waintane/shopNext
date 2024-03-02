@@ -6,6 +6,7 @@ import ItemPanel from "./itemPanel";
 import Title from "@/lib/components/title";
 import BannerPoint from "@/lib/components/bannerPoint";
 import RemoveButton from "./removeButton";
+import Footer from "@/lib/components/footer";
 
 export async function removeElement(formData:FormData){
     "use server";
@@ -63,6 +64,7 @@ export default async function Cart(){
             ))}
 
             <BannerPoint></BannerPoint>
+            <Footer></Footer>
         </div>
     )
 }

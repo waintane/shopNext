@@ -1,8 +1,8 @@
-import { prisma } from "@/lib/db/prisma"
-import styles from "../../style/components/dashboardContent.module.scss"
-import { redirect } from "next/navigation"
-import { User } from "@prisma/client"
-import DashboardEntete from "@/lib/components/dashboardEntete"
+import { prisma } from "@/lib/db/prisma";
+import styles from "../../style/components/dashboardContent.module.scss";
+import { redirect } from "next/navigation";
+import { User } from "@prisma/client";
+import DashboardEntete from "@/lib/components/dashboardEntete";
 
 type user = {
     user:{name?: string | null | undefined,
@@ -88,7 +88,6 @@ export default async function DashboardContent({user,query}:user){
                     </form>
                 ))}
             </div>
-            
         </div>
     )
 }
