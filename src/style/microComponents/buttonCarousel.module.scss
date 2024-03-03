@@ -2,16 +2,57 @@
     position: absolute;
     z-index: 100;
     &:nth-of-type(2){
-        left: 90vw;
+        left: 89.5vw;
     }
     button{
-        width: 2vw;
-        height: clamp(400px,29vw,2000px);
+        width: clamp(50px,3vw,100px);
+        height: clamp(440px,31vw,2000px);
         border: none;
-        background-color: rgba(0, 0, 0, 0.795);
-        color: white;
+        background-color: #3245655b;
+        color: rgb(255, 255, 255);
+        svg{
+            height: 50px;
+        }
         &:hover{
             cursor: pointer;
+        }
+    }
+}
+@media only screen and (max-width: 1300px){
+    .buttonCarousel{
+        &:nth-of-type(2){
+            left: 89vw;
+        }
+    }
+}
+@media only screen and (max-width: 1100px){
+    .buttonCarousel{
+        &:nth-of-type(2){
+            left: 88vw;
+        }
+    }
+}
+@media only screen and (max-width: 900px){
+    .buttonCarousel{
+        &:nth-of-type(2){
+            left: 87vw;
+        }
+    }
+}
+@media only screen and (max-width: 700px){
+    .buttonCarousel{
+        &:nth-of-type(2){
+            left: 86vw;
+        }
+    }
+}
+@media only screen and (max-width: 500px){
+    .buttonCarousel{
+        &:nth-of-type(2){
+            left: 82.7vw;
+        }
+        button{
+            background-color: #32456500;
         }
     }
 }

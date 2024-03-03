@@ -12,3 +12,12 @@
         text-align: center;
     }
 }
+@media only screen and (max-width: 600px){
+    .searchPage{
+        padding-top: 100px;
+    
+        section{
+            justify-content: center;
+        }
+    }
+}

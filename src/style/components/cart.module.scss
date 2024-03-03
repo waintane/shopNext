@@ -27,7 +27,7 @@
             width: 15%;
             font-size: 20px;
             &:first-of-type{
-                margin-left: 5vw;
+                margin-left: clamp(50px,5vw,100px);
                 width: 28.5%;
             }
         }
@@ -40,14 +40,75 @@
         background-color:  #324565;
         color: white;
         img{
-            width: 5vw;
-            height: 5vw;
+            width: clamp(50px,5vw,100px);
+            height: clamp(50px,5vw,100px);
         }
         p{
             padding-left: 5px;
             width: 15%;
             &:first-of-type{
                 width: 30%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .cart{
+        .price,.quantity{
+            display: none;
+        }
+        .panelContainer{
+            width: 92vw;
+
+            .remove{
+                margin-top: 20px;
+                height: clamp(70px, 2vw, 300px);
+                width: 40px;
+                border: none;
+                background-color:  #5F829C;
+                color: white;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        .heading{
+            width: 92vw;
+            h4{
+                width: 19%;
+                font-size: 20px;
+
+                &:first-of-type{
+                    width: 38%;
+                }
+            }
+        }
+        .panel{
+            height: clamp(70px, 2vw, 300px);
+            padding-left: 5px;
+            p{
+                padding-left: 5px;
+                width: 20%;
+                &:first-of-type{
+                    width: 40%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .cart{
+        .heading{
+            width: 92vw;
+            h4{
+                width: 19%;
+                font-size: 20px;
+
+                &:first-of-type{
+                    width: 35%;
+                }
             }
         }
     }

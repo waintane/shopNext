@@ -45,7 +45,7 @@
     }
     .showcase{
         width: 100vw;
-        height: 300px;
+        height: clamp(200px,20vw, 450px);
         margin-top: 150px;
         margin-bottom: clamp(120px, 15vw, 300px);
         background-color: #5F829C;
@@ -57,8 +57,8 @@
             transform: translateY(-50px);
             .containerShowcase{
                 position: relative;
-                height: clamp(250px, 30vw, 550px);
-                width: clamp(250px, 30vw, 550px);
+                height: clamp(300px, 30vw, 550px);
+                width: clamp(300px, 30vw, 550px);
                 display: flex;
                 img{
                     object-fit: cover;
@@ -86,6 +86,93 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .homePage{
+        .showcase{
+            .division{
+                width: 92vw;
+            }
+        }
+        .banniere{
+            height: 55vh;
+            .visuel{
+                img{
+                    height: 55vh;
+                }
+            }
+            .sousBanniere{
+                p{
+                    display: none;
+                }
+            }
+        }
+        .accueilMsg{
+            width: 100vw;
+            text-align: center;
+            h3{
+                font-size: 22px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .homePage{
+        .showcase{
+            height: 550px;
+            margin-bottom: 200px;
+            .division{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                transform: translateY(-90px);
+                .containerShowcase{
+                    position: relative;
+                    height: clamp(350px, 30vw, 550px);
+                    width: clamp(350px, 30vw, 550px);
+                    display: flex;
+                    img{
+                        object-fit: cover;
+                        height: 100%;
+                        width: 100%;
+                        filter: brightness(60%)
+                    }
+                    h3,button{
+                        position: absolute;
+                        margin-left: 30px;
+                    }
+                    h3{
+                        top: 70%;
+                        color: white;
+                    }
+                    button{
+                        border: none;
+                        top: 80%;
+                        background-color: white;
+                        color: black;
+                        padding: 10px 3vw;
+                        text-decoration: none;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px){
+    .homePage{
+        .itemSection{
+            margin: 0px auto;
+            width: 93vw;
+            justify-content: center;
         }
     }
 }

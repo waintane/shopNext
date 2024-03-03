@@ -5,7 +5,6 @@ import { cookies } from "next/headers";
 import ItemPanel from "./itemPanel";
 import Title from "@/lib/components/title";
 import BannerPoint from "@/lib/components/bannerPoint";
-import RemoveButton from "./removeButton";
 import Footer from "@/lib/components/footer";
 
 export async function removeElement(formData:FormData){
@@ -47,11 +46,11 @@ export default async function Cart(){
         <div className={styles.cart}>
             <Title>MON PANIER</Title>
             <div className={styles.heading}>
-                <h4>Produit</h4>
-                <h4>Taille</h4>
-                <h4>Quantité</h4>
-                <h4>Prix</h4>
-                <h4>total</h4>
+                <h4 className={styles.productName}>Produit</h4>
+                <h4 className={styles.size}>Taille</h4>
+                <h4 className={styles.quantity}>Quantité</h4>
+                <h4 className={styles.price}>Prix</h4>
+                <h4 className={styles.total}>total</h4>
             </div>
             {products.map(e => (
                 <div className={styles.panelContainer}>

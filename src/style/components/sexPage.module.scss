@@ -75,6 +75,36 @@
 }
 
 @media only screen and (max-width: 950px) {
-    .sexPage{
-    }
+
 }
+@media only screen and (max-width: 600px) {
+    .sexPage{
+        .banniere{
+            .sousBanniere{
+                p{
+                    display: none;
+                }
+            }
+        }
+        .category{
+            font-size: 25px;
+        }
+        section{
+            display: flex;
+            flex-wrap: wrap;
+            .itemSection{
+                display: flex;
+                flex-direction: column;
+    
+                .line{
+                    display: none;
+                }
+                }
+                .catalog{
+                    justify-content: center;
+                }
+            }
+    }
+
+}
+

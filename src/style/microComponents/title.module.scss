@@ -43,3 +43,17 @@
         text-align: center;
     }
 }
+
+@media only screen and (max-width: 600px){
+    .title{
+        .lineContainer{
+            &:nth-of-type(2){
+                div{
+                    &:nth-of-type(2){
+                        width: 65%;
+                    }   
+                }
+            }
+        }
+    }
+}
