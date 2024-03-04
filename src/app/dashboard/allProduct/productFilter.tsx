@@ -29,9 +29,9 @@ export default function ProductFilter({user}:filterProps){
                 <div className={styles.heading}>
                     <div className={styles.panel}>
                         <h4>Produit</h4>
-                        <h4>Categories</h4>
+                        <h4 className={styles.categoryRemove}>Categories</h4>
                         <form action={querySearch}>
-                            <h4>Prix</h4>
+                            <h4 className={styles.priceRemove}>Prix</h4>
                             <input type="text" name="search" id="search" placeholder="rechercher"/>
                             <button type="submit" style={{display:"none"}}>search</button>
                         </form>

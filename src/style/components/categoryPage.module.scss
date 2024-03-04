@@ -2,7 +2,7 @@
     .addCategory{
         margin-left: 2vw;
         padding: 20px 20px 20px 0px;
-        width: 24vw;
+        width: 50vw;
         input{
             height: 30px;
             font-size: 16px;
@@ -42,6 +42,36 @@
         }
         p{
             width: 15vw;
+        }
+    }
+}
+@media only screen and (max-width: 950px){
+    .content{
+        .addCategory{
+            margin-left: 4vw;
+            padding: 20px 20px 20px 0px;
+            width: 100vw;
+            input{
+                height: 30px;
+                font-size: 16px;
+            }
+            button{
+                border: none;
+                background-color: #324565;
+                width: 150px;
+                height: 30px;
+                color: white;
+                font-size: 16px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        .panel{
+            width: 92vw;
+            p{
+                width: 15vw;
+            }
         }
     }
 }

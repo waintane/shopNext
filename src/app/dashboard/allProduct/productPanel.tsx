@@ -34,8 +34,8 @@ export default function ProductPanel({product}:productsPanelProps){
                 <img src={product.imageUrl} alt={product.name} />
                 <div className={styles.panel}>
                         <p> {product.name} </p>
-                        <p>Categorie: {product.category} </p>
-                        <p> {(product.price/100)} </p>
+                        <p className={styles.categoryRemove}>Categorie: {product.category} </p>
+                        <p className={styles.priceRemove}> {(product.price/100)} </p>
                     <div className={styles.forms}>
                         <form action={updateItem} >
                             <input style={{display: 'none'}} type="text" value={product.id} name="id" />

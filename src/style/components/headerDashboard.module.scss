@@ -42,6 +42,9 @@
         }
     }
 }
+.dashboardMenuMobile{
+    display: none;
+}
 @media only screen and (max-width: 950px){
     .header{
         height: 10vh;
@@ -82,7 +85,9 @@
         display: none;
     }
     .headerMobile{
+        position: fixed;
         width: 100vw;
+        height: 40px;
         background-color:#324565;
         padding: 10px 4vw;
         .mobile{
@@ -90,16 +95,39 @@
 
         }
         .menuBurger{
+            position: fixed;
+            z-index: 500;
             width: 35px;
             height: 18px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             .line{
+                transition: 0.8s;
                 height: 4px;
                 width: 100%;
                 background-color: #EABF48;
             }
+        }
+    }
+    .dashboardMenuMobile{
+        position: fixed;
+        z-index: 50;
+        transition: 1s;
+        padding: 30px 4vw;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background-color: #324565;
+        height: 20vh;
+        width: 100vw;
+        position: fixed;
+        left: 0px;
+        transform: translateY(-60vh);
+        a{
+            font-size: 15px;
+            color: white;
+            text-decoration: none;
         }
     }
 }

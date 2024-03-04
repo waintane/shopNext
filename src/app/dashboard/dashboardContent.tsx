@@ -68,7 +68,7 @@ export default async function DashboardContent({user,query}:user){
                 <form action={searchUser}>
                     <div className={styles.tabRow}>
                         <h4>Utilisateurs</h4>
-                        <h4>Courriels</h4>
+                        <h4 className={styles.email}>Courriels</h4>
                         <div className={styles.status}>
                             <h4>statut</h4>
                             <input type="search" placeholder="rechercher" name="search"/>
@@ -80,7 +80,7 @@ export default async function DashboardContent({user,query}:user){
                 {users.map( e => (
                     <form action="" className={styles.tabRow}>
                         <p> {e.name} </p>
-                        <p> {e.email} </p>
+                        <p className={styles.email}> {e.email} </p>
                         <div className={styles.status}>
                             <p> {e.status} </p>
                             <button type="submit"> modifier </button>

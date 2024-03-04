@@ -32,5 +32,30 @@
     }
 }
 @media only screen and (max-width: 950px){
+    .dashboardEntete{
+        padding-top: 70px;
+        .dashboardInfo{
+            margin-left: 0vw;
+        }
+        .title{
+            padding: 10px 0px 10px 4vw;
+        }
+        .dashboardInfo{
+            width: 92vw;
+            margin: 0px auto;
+        }
+        .lineContainer{
+            width: 92vw;
+            margin-left: 4vw;
+            .line{
     
+                &:nth-of-type(1){
+                    width: 70%;
+                }
+                &:nth-of-type(2){
+                    width: 20%;
+                }
+            }
+        }
+    }
 }

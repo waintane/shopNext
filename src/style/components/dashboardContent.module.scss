@@ -11,8 +11,8 @@
             flex-direction: column;
             text-align: center;
             justify-content: center;
-            width: clamp(200px, 10vw, 2000px);
-            height: clamp(200px, 10vw, 2000px);
+            width: clamp(160px, 10vw, 2000px);
+            height: clamp(160px, 10vw, 2000px);
             background-color: #5F829C;
             color: white;
             svg{
@@ -49,5 +49,58 @@
     }
 }
 @media only screen and (max-width: 950px){
+    .content{
+        padding-left: 0px;
+        .email{
+            display: none;
+        }
+        .boxInfo{
+            width: 92vw;
+            margin: 30px 0px 0px 4vw;
+        }
+        .tableau{
+            margin: 50px 0px 0px 4vw;
+            width: 92vw;
+            .tabRow > h4,p{
+                width: 50%;
+            }
+            .status{
+                width: 50%;
+                display: flex;
+                h4{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px){
+    .content{
+        .boxInfo{
+            .box{
+            }
+        }
+        .tableau{
     
+            .tabRow{
+            }
+            .tabRow > h4{
+                font-size: 20px;
+            }
+            .tabRow > h4,p{
+                width: 60%;
+            }
+            .status{
+                width: 40%;
+                display: flex;
+                h4{
+                    font-size: 20px;
+                }
+                input,button{
+                    width: 50%;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
 }

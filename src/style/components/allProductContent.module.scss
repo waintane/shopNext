@@ -6,26 +6,27 @@
         width: 76vw;
         display: flex;
         img{
-            width: 3.5vw;
-            height: 3.5vw;
+            width: clamp(50px, 3.5vw, 400px);
+            height: clamp(50px, 3.5vw, 400px);
             margin-right: 1vw;
         }
         .panel{
             width: 75vw;
-            height: 3.5vw;
+            height: clamp(50px, 3.5vw, 400px);
             display: flex;
             align-items: center;
             border-bottom: 2px solid gray;
             margin-bottom: 5px;
             .forms{
-                width: 20%;
+                width: 30%;
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-end;
+                gap: 5px;
 
                 button{
                     border: none;
                     background-color: #324565;
-                    width: 120px;
+                    width: clamp(80px, 7vw ,120px);
                     height: 30px;
                     color: white;
                     font-size: 16px;
@@ -40,6 +41,10 @@
         }
         p{
             width: 27%;
+
+            &:last-of-type{
+                width: 20%;
+            }
         }
     }
     .heading{
@@ -60,4 +65,90 @@
         padding-bottom: 5px;
     }
 
+}
+@media only screen and (max-width: 950px){
+    .content{
+        margin-left: 0vw;
+        width: 100%;
+        .container{
+            margin-left: 4vw;
+            width: 92vw;
+            img{
+                width: clamp(70px, 3.5vw, 400px);
+                height: clamp(70px, 3.5vw, 400px);
+            }
+            .panel{
+                width: 92vw;
+                height: clamp(70px, 3.5vw, 400px);
+            }
+        }
+        .heading{
+            margin: 50px 0px 20px 11vw;
+            .panel{
+                width: 82.5vw;
+            }
+            h4{
+                width: 24.8%;
+                font-size: 18px;
+                overflow-x: hidden;
+            }
+            form{
+                width: 50%;
+                display: flex;
+                justify-content: space-between;
+            }
+            padding-bottom: 5px;
+        }
+    
+    }  
+}
+@media only screen and (max-width: 600px){
+    .content{
+        .priceRemove{
+            display: none;
+        }
+        .categoryRemove{
+            display: none;
+        }
+        .container{
+
+            .panel{
+                width: 92vw;
+                height: clamp(70px, 3.5vw, 400px);
+                justify-content: space-between;
+                p{
+                    width: 55%;
+                }
+                .forms{
+                    width: 30%;
+                    .delete{
+                        width: 40px;
+                    }
+                }
+            }
+        }
+        .heading{
+            margin: 50px 0px 20px 16vw;
+            .panel{
+                width: 75.5vw;
+                display: flex;
+                justify-content: space-between;
+            }
+            h4{
+                width: 40.8%;
+                font-size: 18px;
+                overflow-x: hidden;
+            }
+            form{
+                width: 50%;
+                display: flex;
+                justify-content: end;
+                input{
+                    width: 100px;
+                }
+            }
+            padding-bottom: 5px;
+        }
+    
+    } 
 }

@@ -30,6 +30,7 @@ export default function Header(){
                 <form>
                     <SearchHeader></SearchHeader>
                 </form>
+                <Link href="/login">Login</Link>
                 <Link href="/sexPage?sex=homme">Homme</Link>
                 <Link href="/sexPage?sex=femme">Femme</Link>
             </div>
