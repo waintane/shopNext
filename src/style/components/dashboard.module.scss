@@ -18,3 +18,21 @@
         }
     }
 }
+@media only screen and (max-width: 950px){
+    .dashboardPage{
+        display: flex;
+        flex-direction: column;
+
+        .baby{
+            margin-left: 0vw;
+            width: 100%;
+    
+            .categories{
+                margin-left: 2vw;
+                width: 76vw;
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

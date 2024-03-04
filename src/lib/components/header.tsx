@@ -6,7 +6,6 @@ import BurgerButton from "./burgerButton";
 export default function Header(){
     return(
         <header>
-            
             <div className={styles.header}>
                 <BurgerButton></BurgerButton>
                 <div className={styles.separation}>
