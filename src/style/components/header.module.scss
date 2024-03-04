@@ -10,17 +10,20 @@
     padding: 0px 4vw;
     overflow-x: hidden;
     gap: 30px;
+    .burgerButton{
+        display: none;
+    }
     .separation{
         width: 20%;
         display: flex;
         gap: 20px;
-        &:nth-of-type(2){
-            display: flex;
-            justify-content: end;
-        }
         form{
             display: flex;
             align-items: center;
+
+            input{
+                width: clamp(45px, 12vw, 400px);
+            }
         }
     }
     a{
@@ -62,6 +65,59 @@
         svg{
             width: 30px;
             height: 30px;
+        }
+    }
+}
+.mobile{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    .header{
+        position: fixed;
+        .burgerButton{
+            display: flex;
+            position: absolute;
+            width: 35px;
+            height: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .line{
+                transition: 0.7s;
+                width: 100%;
+                background-color: #EABF48;
+                height: 4px;
+            }
+        }
+        .separation{
+            .desktop{
+                display: none;
+            }
+        }
+    }
+    .mobile{
+        display: flex;
+    }
+    .menuMobile{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        transition: 0.8s;
+        transform: translateY(-50vh);
+        z-index: 1000;
+        top: 60px;
+        width: 100vw;
+        height: 25vh;
+        background-color: #5F829C;
+        a, form{
+            padding: 5px 4vw;
+            text-decoration: none;
+            color: white;
+
+            input{
+                width: 100%;
+            }
         }
     }
 }

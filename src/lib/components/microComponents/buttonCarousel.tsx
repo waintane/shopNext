@@ -12,7 +12,7 @@ let currentPosition:number = 0;
 export default function ButtonCarousel({children, direction}: buttonCarouselProps){
 
 
-    
+    currentPosition = 0;
 
     function slide(direction:String){
         const carousels = Array.from(document.querySelectorAll(".carousel") as any)!;
