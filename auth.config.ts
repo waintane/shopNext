@@ -1,7 +1,7 @@
-import type { NextAuthConfig } from "next-auth";
+// import type { NextAuthConfig } from "next-auth";
 
-export const authConfig = {
-    pages: {
-        signIn: "/login"
-    }
-} satisfies NextAuthConfig: Type '{ pages: { signIn: string; }; }'
+// export const authConfig = {
+//     pages: {
+//         signIn: "/login"
+//     }
+// } satisfies NextAuthConfig: Type '{ pages: { signIn: string; }; }'
