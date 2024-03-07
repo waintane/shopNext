@@ -7,6 +7,23 @@ import Title from "@/lib/components/title";
 import BannerPoint from "@/lib/components/bannerPoint";
 import Footer from "@/lib/components/footer";
 
+type ProductProps = {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    imageUrl: string;
+    quantitySmall: number | null;
+    quantityMedium: number | null;
+    quantityLarge: number | null;
+    category: string;
+    sex: string | null;
+    createdAt: Date;
+    updatedAt: Date;
+    currentSize: string | null | undefined;
+    currentQuantity: number | null | undefined;
+} | null
+
 async function removeElement(formData:FormData){
     "use server";
 
@@ -27,7 +44,7 @@ async function removeElement(formData:FormData){
 export default async function Cart(){
 
     const cart = cookies().get("cart");
-    let products:any = [];
+    let products:ProductProps[] = [];
     let array:any = [];
     if(cart){
         const array = JSON.parse(cart?.value!);
@@ -37,8 +54,8 @@ export default async function Cart(){
                 where : {id : array[i].id}
             });
             products.push(product);
-            products[i].currentSize = array[i].size;
-            products[i].currentQuantity = array[i].quantity;
+            products[i]!.currentSize = array[i].size;
+            products[i]!.currentQuantity = array[i].quantity;
         }
     }
 
@@ -54,9 +71,9 @@ export default async function Cart(){
             </div>
             {products.map(e => (
                 <div className={styles.panelContainer}>
-                    <ItemPanel item={e} key={e.id}></ItemPanel>
+                    <ItemPanel item={e} key={e?.id}></ItemPanel>
                     <form action={removeElement}>
-                        <input type="text" name="id" value={e.id} style={{display : "none"}}/>
+                        <input type="text" name="id" value={e?.id} style={{display : "none"}}/>
                         <button className={styles.remove}>x</button>
                     </form>
                 </div>

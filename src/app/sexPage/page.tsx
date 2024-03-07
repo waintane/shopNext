@@ -9,6 +9,7 @@ import FilterPage from "./filterPage";
 import BannerPoint from "@/lib/components/bannerPoint";
 import RemoveRefreshButton from "@/lib/components/removeRefreshButton";
 import Footer from "@/lib/components/footer";
+import { Product } from "@prisma/client";
 
 interface searchParamsProps {
     searchParams : {sex:string, category:string},
@@ -24,7 +25,7 @@ async function reset(formData:FormData){
 
 export default async function SexPage({searchParams: {sex, category}} : searchParamsProps){
 
-    let products:any;
+    let products:Product[] = [];
 
     const categories = await prisma.categories.findMany({
         orderBy: {id : "desc"}

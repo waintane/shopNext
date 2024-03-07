@@ -1,5 +1,11 @@
 import { cookies } from 'next/headers';
 
+type arrayType = {
+    id:string | undefined
+    quantity:number
+    size:string | undefined
+}
+
 export default async function addToCart(formData:FormData){
     "use server";
 
@@ -9,7 +15,7 @@ export default async function addToCart(formData:FormData){
     let currentCart = cookies().get("cart");
 
     if(currentCart){
-        let array = JSON.parse(currentCart?.value!);
+        let array:arrayType[] = JSON.parse(currentCart?.value!);
 
         let state = false;
 

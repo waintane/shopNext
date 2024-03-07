@@ -61,6 +61,8 @@ model Product {
   special       Int?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  currentQuantity Int?
+  currentSize String?
 }
 
 model Categories {

@@ -3,6 +3,7 @@ import styles from "../../style/components/searchPage.module.scss";
 import { prisma } from "@/lib/db/prisma";
 import BannerPoint from "@/lib/components/bannerPoint";
 import Footer from "@/lib/components/footer";
+import { Product } from "@prisma/client";
 
 interface searchParamsProps {
     searchParams : {query:string}
@@ -10,7 +11,7 @@ interface searchParamsProps {
 
 export default async function SearchPage({searchParams: {query}}: searchParamsProps){
 
-    let products:any;
+    let products:Product[] = [];
 
     if(!query){
         products = await prisma.product.findMany({
