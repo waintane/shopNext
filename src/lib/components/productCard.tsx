@@ -8,7 +8,7 @@ interface ProductCardProps {
     product: Product
 }
 
-export async function checkCookiesItem(formData:FormData){
+async function checkCookiesItem(formData:FormData){
     "use server";
 
     const id = formData.get("product")?.toString();

@@ -9,7 +9,7 @@ interface filterProps{
     user: User
 }
 
-export async function querySearch(formData:FormData){
+async function querySearch(formData:FormData){
     "use server";
 
     let query = formData.get("search")?.toString();

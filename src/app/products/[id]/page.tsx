@@ -8,8 +8,8 @@ import styles from "../../../style/components/productPage.module.scss";
 import ProductCard from "@/lib/components/productCard";
 import Title from "@/lib/components/title";
 import BannerPoint from "@/lib/components/bannerPoint";
-import { cookies } from 'next/headers';
 import Footer from "@/lib/components/footer";
+import addToCart from "../addToCart";
 
 interface productPageProps {
     params: {
@@ -23,39 +23,7 @@ const getProduct = cache(async (id:string) => {
     return product;
 })
 
-export async function addToCart(formData:FormData){
-    "use server";
-
-    const size = formData.get("size")?.toString();
-    const productId = formData.get("id")?.toString();
-
-    let currentCart = cookies().get("cart");
-
-    if(currentCart){
-        let array = JSON.parse(currentCart?.value!);
-
-        let state = false;
-
-        array.map(e => {
-            if(e.id == productId){
-                e.quantity += 1;
-                state = true;
-                return;
-            }
-        })
-        if(!state){
-            array.push({size: size, id: productId, quantity: 1});
-        }
-        cookies().set("cart", JSON.stringify(array));
-    }else{
-        let element = JSON.stringify([{size: size, id: productId ,quantity: 1}]);
-
-        cookies().set("cart", element);
-    }
-}
-
-
-export async function generateMetadata({params: {id}}: productPageProps): Promise<Metadata> {
+async function generateMetadata({params: {id}}: productPageProps): Promise<Metadata> {
 
     const product = await getProduct(id);
     

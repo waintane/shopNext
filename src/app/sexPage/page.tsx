@@ -14,7 +14,7 @@ interface searchParamsProps {
     searchParams : {sex:string, category:string},
 }
 
-export async function reset(formData:FormData){
+async function reset(formData:FormData){
     "use server";
 
     const sex = formData.get("sex")?.toString();

@@ -11,7 +11,7 @@ type user = {
     query : string
 }
 
-export async function searchUser(formData:FormData){
+async function searchUser(formData:FormData){
     "use server"
 
     let query = formData.get("search")?.toString();
