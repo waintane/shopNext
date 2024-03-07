@@ -15,11 +15,11 @@ export default function ButtonCarousel({children, direction}: buttonCarouselProp
     currentPosition = 0;
 
     function slide(direction:String){
-        const carousels = Array.from(document.querySelectorAll(".carousel") as any)!;
-        const cards = Array.from(document.querySelectorAll(".carousel .productCard") as any);
+        const carousels = document.querySelectorAll<HTMLElement>(".carousel");
+        const cards = document.querySelectorAll<HTMLElement>(".carousel .productCard");
         
-        const card:any = cards[0];
-        let carousel:any = carousels[0];
+        const card = cards[0];
+        let carousel = carousels[0];
 
         let dimension = card.offsetWidth;
         let dimensionCarousel = carousel.offsetWidth;
