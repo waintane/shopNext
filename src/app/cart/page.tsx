@@ -7,7 +7,7 @@ import Title from "@/lib/components/title";
 import BannerPoint from "@/lib/components/bannerPoint";
 import Footer from "@/lib/components/footer";
 
-export async function removeElement(formData:FormData){
+async function removeElement(formData:FormData){
     "use server";
 
     const target = formData.get("id")?.toString();
