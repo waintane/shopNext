@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/db/prisma"
 import HeaderDashboard from "../headerDashboard"
 import { getServerSession } from "next-auth"
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"
+import authOptions from "@/lib/components/authOptions";
 import  { redirect } from "next/navigation";
 import CategoriesPanel from "./categoriesPanel";
 import styles from "../../../style/components/dashboard.module.scss";

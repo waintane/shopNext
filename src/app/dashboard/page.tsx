@@ -1,7 +1,7 @@
 "use server";
 
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import authOptions from "@/lib/components/authOptions";
 import  { redirect } from "next/navigation";
 import Link from "next/link";
 import HeaderDashboard from "./headerDashboard";
@@ -16,7 +16,8 @@ export default async function DashBoardPage({searchParams: {query}}:searchProps)
 
     const session:any = await getServerSession(authOptions);
     const user = await session?.user;
-
+    console.log(user);
+    console.log("bro")
     if(user?.status != "admin"){
         redirect("./");
     }

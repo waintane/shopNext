@@ -3,7 +3,7 @@
 import  { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/prisma";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import authOptions from "@/lib/components/authOptions";
 import Link from "next/link";
 import HeaderDashboard from "../headerDashboard";
 import styles from "../../../style/components/dashboard.module.scss";
