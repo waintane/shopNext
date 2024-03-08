@@ -11,6 +11,7 @@ import manteauFemme from "../img/ManteauFemme.jpg";
 import { cookies } from "next/headers";
 import Carousel from "@/lib/components/carousel";
 import Footer from "@/lib/components/footer";
+import Image from 'next/image';
 
 export default async function Home() {
     const products = await prisma.product.findMany({
@@ -56,12 +57,12 @@ export default async function Home() {
         <div className={styles.showcase}>
           <div className={styles.division}>
             <Link href={"/sexPage?sex=femme&category=manteau"} className={styles.containerShowcase}>
-              <img src={manteauFemme.src} alt="manteau pour femme" />
+              <Image src={manteauFemme.src} alt="manteau pour femme" width={600} height={600}></Image>
               <h3>MANTEAU POUR FEMME</h3>
               <button>FEMME</button>
             </Link>
             <Link href={"/sexPage?sex=homme&category=manteau"} className={styles.containerShowcase}>
-              <img src={manteauHomme.src} alt="manteau pour homme" />
+              <Image src={manteauHomme.src} alt="manteau pour homme" width={600} height={600}></Image>
               <h3>MANTEAU POUR HOMME</h3>
               <button>HOMME</button>
             </Link>
