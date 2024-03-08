@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "../../style/components/productCard.module.scss";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import Image from 'next/image';
 
 interface ProductCardProps {
     product: Product
@@ -66,7 +67,7 @@ export default function ProductCard({product}: ProductCardProps){
                 <div className={styles.productCard}>
                     <div className={styles.card}>
                         <div className={styles.containerImg}>
-                            <img src={product.imageUrl} alt={product.name} />
+                            <Image src={product.imageUrl} alt={product.name} width={400} height={750}></Image>
                         </div>
                         <div className={styles.content}>
                             <h2> {product.name} </h2>

@@ -2,6 +2,7 @@ import { Categories, Product } from "@prisma/client"
 import styles from "../../../style/components/allProductContent.module.scss";
 import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
+import Image from 'next/image';
 
 interface productsPanelProps {
     product: Product
@@ -31,7 +32,7 @@ export default function ProductPanel({product}:productsPanelProps){
     return(
         <div className={styles.content}>
             <div className={styles.container}>
-                <img src={product.imageUrl} alt={product.name} />
+                <Image src={product.imageUrl} alt={product.name} width={70} height={70}></Image>
                 <div className={styles.panel}>
                         <p> {product.name} </p>
                         <p className={styles.categoryRemove}>Categorie: {product.category} </p>
