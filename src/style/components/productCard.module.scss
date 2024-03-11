@@ -21,7 +21,8 @@
         position: relative;
         transition: 0.2s;
         &:hover{
-            transform: scale(1.01);
+            transform: scale(1.02);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.256);
         }
         .card{
             height: 98%;
