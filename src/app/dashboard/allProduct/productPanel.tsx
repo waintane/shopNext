@@ -1,4 +1,4 @@
-import { Categories, Product } from "@prisma/client"
+import { Categories, Product } from "@prisma/client";
 import styles from "../../../style/components/allProductContent.module.scss";
 import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";

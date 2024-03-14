@@ -3,6 +3,11 @@ import styles from "../../style/components/header.module.scss";
 import SearchHeader from "./searchHeader";
 import BurgerButton from "./burgerButton";
 
+/* Composant header contenant la barre de recherce ainsi que le button burger 
+
+Composant côté serveur
+*/
+
 export default function Header(){
     return(
         <header>

@@ -5,6 +5,13 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import Image from 'next/image';
 
+/* Composant product card, le composant le plus utilisé sur le site, chaque fois qu'il est cliqué
+il s'ajoute dans le cookie produit recement visité et affiche une image optimisé à l'aide du composant
+Image
+
+Composant côté serveur
+*/
+
 interface ProductCardProps {
     product: Product
 }

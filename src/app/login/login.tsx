@@ -7,6 +7,12 @@ import { useState } from "react";
 import Link from "next/link";
 import styles from "../../style/components/registerPage.module.scss";
 
+/* Composant login permettant à l'utilisateur de se connecté à son compte à l'aide de la fonction SignIn
+de NextAuth
+
+Composant côté client
+*/
+
 export default function Login(){
     const router = useRouter();
     const [data, setData] = useState({

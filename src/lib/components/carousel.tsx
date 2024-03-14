@@ -4,6 +4,11 @@ import ProductCard from "./productCard";
 import styles from "../../style/microComponents/carousel.module.scss";
 import ButtonCarousel from "./microComponents/buttonCarousel";
 
+/* Composant carousel affichant tout les produit que l'on lui passe 
+
+Composant côté serveur
+*/
+
 interface productsProps {
     products : Product[]
 }

@@ -4,6 +4,8 @@ type titleProps = {
     children: React.ReactNode,
 }
 
+/* Composant visuel pour afficher les titres */
+
 export default function Title({children}:titleProps){
     return(
         <div className={styles.title}>

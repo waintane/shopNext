@@ -2,6 +2,11 @@ import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
 import styles from "../../../style/components/categoryPage.module.scss";
 
+/* Composant permettant de créer les différentes catégorie 
+
+Composant côté serveur
+*/
+
 async function createCategory(formData:FormData){
     "use server";
 

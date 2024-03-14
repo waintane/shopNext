@@ -5,6 +5,12 @@ import BannerPoint from "@/lib/components/bannerPoint";
 import Footer from "@/lib/components/footer";
 import { Product } from "@prisma/client";
 
+/* Composant page, il affiche tout les produit correspondant au query dans son url, donc 
+ce que l'utilisateur recherche
+
+Composant côté serveur
+*/
+
 interface searchParamsProps {
     searchParams : {query:string}
 }

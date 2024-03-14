@@ -11,6 +11,11 @@ import BannerPoint from "@/lib/components/bannerPoint";
 import Footer from "@/lib/components/footer";
 import addToCart from "../addToCart";
 
+/* Composant de page affichant le produit sélectionné avec le formulaire appelant la fonction add to cart
+
+Composant côté serveur
+*/
+
 interface productPageProps {
     params: {
         id:string
@@ -23,19 +28,6 @@ const getProduct = cache(async (id:string) => {
     return product;
 })
 
-async function generateMetadata({params: {id}}: productPageProps): Promise<Metadata> {
-
-    const product = await getProduct(id);
-    
-    return {
-        title: product.name + " - shopNext",
-        description: product.description,
-        openGraph: {
-            images: [{ url: product.imageUrl}]
-        }
-    }
-}
-
 export default async function Products({params: {id}}: productPageProps){
 
     const product = await getProduct(id);
@@ -45,8 +37,6 @@ export default async function Products({params: {id}}: productPageProps){
         take: 4,
 
     });
-
-    // checkCookiesItem(id);
 
     return(
         <div className={styles.productPage}>

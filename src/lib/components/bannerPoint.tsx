@@ -1,5 +1,10 @@
 import styles from "../../style/microComponents/bannerPoint.module.scss";
 
+/* Composant visuel du site, la bannière de point 
+
+Composant côté serveur
+*/
+
 export default function BannerPoint(){
     return(
         <div className={styles.bannerPoint}>

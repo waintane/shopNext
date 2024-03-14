@@ -2,6 +2,11 @@
 
 import styles from "../../style/components/headerDashboard.module.scss";
 
+/* Composant du bouton burger du dashboard
+
+Composant côté client
+*/
+
 let menuShowDashboard = false;
 
 export default function BurgerDashboard(){

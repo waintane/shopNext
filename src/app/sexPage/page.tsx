@@ -11,6 +11,12 @@ import RemoveRefreshButton from "@/lib/components/removeRefreshButton";
 import Footer from "@/lib/components/footer";
 import { Product } from "@prisma/client";
 
+/* Composant page, affichant chaque item lié au sex de la page ouverte ainsi que les items lié au filtre 
+appliqué à l'aide des query dans l'url 
+
+Composant côté serveur
+*/
+
 interface searchParamsProps {
     searchParams : {sex:string, category:string},
 }

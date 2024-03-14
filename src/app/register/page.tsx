@@ -5,6 +5,12 @@ import  { useRouter } from "next/navigation";
 import styles from "../../style/components/registerPage.module.scss";
 import Link from "next/link";
 
+/* Composant de page contenant le formulaire d'enregistrement d'utlisateur et fesant référence à la 
+fonction POST du route.ts dans api/register/route.tss
+
+Composant côté client
+*/
+
 export default function RegisterPage(){
     const router = useRouter();
     const [data, setData] = useState({

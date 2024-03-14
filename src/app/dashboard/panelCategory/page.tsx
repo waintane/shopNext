@@ -1,12 +1,18 @@
-import { prisma } from "@/lib/db/prisma"
-import HeaderDashboard from "../headerDashboard"
-import { getServerSession } from "next-auth"
+import { prisma } from "@/lib/db/prisma";
+import HeaderDashboard from "../headerDashboard";
+import { getServerSession } from "next-auth";
 import authOptions from "@/lib/components/authOptions";
 import  { redirect } from "next/navigation";
 import CategoriesPanel from "./categoriesPanel";
 import styles from "../../../style/components/dashboard.module.scss";
 import AddCategory from "./addCategory";
 import DashboardEntete from "@/lib/components/dashboardEntete";
+
+/* Composant de la page panelCategory vérifiant que l'utilisateur est belle et bien admin et ensuite appelle les composants
+Addcategory et categoryPanel
+
+Composant côté serveur
+*/
 
 export default async function PanelCategory(){
     const session:any = await getServerSession(authOptions);

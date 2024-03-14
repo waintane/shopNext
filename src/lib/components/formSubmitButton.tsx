@@ -3,6 +3,11 @@
 import { ComponentProps } from "react";
 import { useFormStatus } from "react-dom";
 
+/* button de remise de formulaire, il affiche une confirmation d'envoie lorsqu'il est cliqué
+
+Composant côté client
+*/
+
 type FormSubmitButtonProps = {
      children: React.ReactNode,
      className?: string,

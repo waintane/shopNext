@@ -3,6 +3,10 @@
 import { useRouter } from "next/navigation";
 import styles from "../../style/components/sexPage.module.scss";
 
+/* Composant permettant de retirer le filtre de la page sexProduit
+
+Composant côté client
+*/
 
 interface buttonProps {
     category: string,

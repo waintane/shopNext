@@ -1,5 +1,11 @@
 "use client";
 
+/* Composant bouton permmettant de faire défiler le carousel de gauceh à droite
+et vice versa
+
+composant côté client
+*/
+
 import styles from "../../../style/microComponents/buttonCarousel.module.scss";
 
 interface buttonCarouselProps{

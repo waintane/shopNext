@@ -3,6 +3,8 @@ import { PrismaClient } from "@prisma/client";
 import CredentialsProvider from "next-auth/providers/credentials";
 const bcrypt = require('bcrypt');
 
+/* Composant charger de faire l'authentification de l'utilisateur
+*/
 
 const prisma = new PrismaClient()
 

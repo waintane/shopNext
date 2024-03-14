@@ -3,6 +3,12 @@ import { prisma } from "@/lib/db/prisma";
 import styles from "../../../style/components/categoryPage.module.scss";
 import { redirect } from "next/navigation";
 
+/* Composant permettant de générer individuellement chaque option de catégorie avec le formulaire pour les
+effacer au besoin
+
+Composant côté serveur
+*/
+
 interface categoriesPanelProps {
     category: Categories
 }

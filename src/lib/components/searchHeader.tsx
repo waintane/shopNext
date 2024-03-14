@@ -3,6 +3,12 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+/* Composant barre de recherche dans le header permettant d'afficher tous les produits recherché
+dans la page searchProduct
+
+Composant côté client
+*/
+
 export default function SearchHeader(){
     const [query, setQuery] = useState("");
     const router = useRouter();

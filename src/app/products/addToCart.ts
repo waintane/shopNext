@@ -1,5 +1,8 @@
 import { cookies } from 'next/headers';
 
+/* fonction add to cart qui permet de sauvegarde le cart dans un cookie qui sera ensuite lu 
+dans la page cart */
+
 type arrayType = {
     id:string | undefined
     quantity:number

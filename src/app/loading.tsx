@@ -1,3 +1,5 @@
+/* Page de chargement */
+
 export default function LoadingPage(){
     return(
         <div>

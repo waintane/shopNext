@@ -1,6 +1,12 @@
 import { User } from "@prisma/client";
 import styles from "../../style/microComponents/dashboardEntete.module.scss";
 
+/* Composant dashboard entete, il affiche les nom de l'admin ainsi que son statut dans 
+toute les pages du dashboard 
+
+Composant côté serveur
+*/
+
 type dashboardEnteteProps = {
     children : React.ReactNode,
     user: {name?: string | null | undefined,

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Categories, Product } from "@prisma/client"
 import styles from "../../../../style/components/productUpdate.module.scss";

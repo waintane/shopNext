@@ -5,6 +5,8 @@ import Provider from "../../context/Provider";
 import "./globals.css";
 import Header from "@/lib/components/header";
 
+/* Composant primaire sur lequel la web app repose */
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

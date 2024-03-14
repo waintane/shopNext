@@ -8,6 +8,12 @@ import HeaderDashboard from "./headerDashboard";
 import DashboardContent from "./dashboardContent";
 import styles from "../../style/components/dashboard.module.scss";
 
+/* Composant page de la page dashboard permettant de vérifier si l'utilisateur est belle et bien admin
+pour ensuite appeller le composant dashboard content
+
+Composant côté serveur
+*/
+
 interface searchProps {
     searchParams : {query:string}
 }
@@ -16,8 +22,6 @@ export default async function DashBoardPage({searchParams: {query}}:searchProps)
 
     const session:any = await getServerSession(authOptions);
     const user = await session?.user;
-    console.log(user);
-    console.log("bro")
     if(user?.status != "admin"){
         redirect("./");
     }

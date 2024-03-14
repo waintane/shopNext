@@ -4,6 +4,12 @@ import { redirect } from "next/navigation";
 import { User } from "@prisma/client";
 import DashboardEntete from "@/lib/components/dashboardEntete";
 
+/* Composant contenant tout le contenue de la page d'accueil du dashboard il contient le formulaire de 
+recherche d'utilisateur, la liste d'utilisateur et le bloc affichant le nombre d'utilisateur
+
+Composant côté serveur
+*/
+
 type user = {
     user:{name?: string | null | undefined,
         email?:string | null | undefined,

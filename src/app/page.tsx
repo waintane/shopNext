@@ -13,6 +13,12 @@ import Carousel from "@/lib/components/carousel";
 import Footer from "@/lib/components/footer";
 import Image from 'next/image';
 
+/* Composant page d'accueil, il affiche le composant carousel, et tout les items de la base de donnée du 
+site 
+
+Composant côté serveur
+*/
+
 export default async function Home() {
     const products = await prisma.product.findMany({
       orderBy: {id: "desc"},

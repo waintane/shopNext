@@ -1,6 +1,11 @@
 import Link from "next/link";
 import styles from "../../style/components/footer.module.scss";
 
+/* Composant footer
+
+Composant côté serveur
+*/
+
 export default function Footer(){
     return(
         <footer className={styles.footer}>

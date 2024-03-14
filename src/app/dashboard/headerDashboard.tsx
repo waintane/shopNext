@@ -2,6 +2,11 @@ import Link from "next/link";
 import styles from "../../style/components/headerDashboard.module.scss";
 import BurgerDashboard from "./burgerDashboard";
 
+/* Comopsant header pour toutes les pages du dashboard 
+
+Composant côté serveur
+*/
+
 export default function HeaderDashboard(){
     return(
         <header className={styles.headerMobile}>

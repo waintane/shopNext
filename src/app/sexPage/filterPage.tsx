@@ -4,11 +4,16 @@ import { Categories } from "@prisma/client";
 import { redirect, useRouter } from "next/navigation";
 import styles from "../../style/microComponents/pageMenu.module.scss";
 
+/* Composant filtre de la page des produits pour homme ou femme pour chaque catégorie 
+dans la databse il créer un filtre qui s'applique à homme et femme
+
+Composante côté client
+*/
+
 interface filterProps{
     categories : Categories[],
     sex : string
 }
-
 
 export default function FilterPage({categories, sex}:filterProps){
     const router = useRouter();

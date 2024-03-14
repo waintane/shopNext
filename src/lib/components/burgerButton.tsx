@@ -2,6 +2,11 @@
 
 import styles from "../../style/components/header.module.scss";
 
+/* Composant menu burger du header il permet d'affiché et de retirer le menu déroulant 
+
+Composant côté client
+*/
+
 let menuShow = false;
 
 export default function BurgerButton(){
