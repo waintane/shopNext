@@ -9,6 +9,11 @@ interface filterProps{
     user: User
 }
 
+/* Composant qui génère le formulaire de recherche de produits pour la page allProduct 
+
+Composant côté serveur
+*/
+
 async function querySearch(formData:FormData){
     "use server";
 

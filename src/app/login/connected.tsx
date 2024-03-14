@@ -12,7 +12,6 @@ type user = {
 export default function Connected({user}:user){
 
     function deleteSession(){
-        console.log("bruh");
         signOut();
     }
 

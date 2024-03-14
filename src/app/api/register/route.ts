@@ -2,6 +2,10 @@ const bcrypt = require("bcrypt");
 import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 
+/* une fois le formulaire d'enregistrement remplie, cette fonction est appelé,
+elle vérifie que l'email utilisé n'est pas deja pris et prossede ensuite à l'enregistrement
+*/
+
 const prisma = new PrismaClient();
 
 export async function POST(req:any){

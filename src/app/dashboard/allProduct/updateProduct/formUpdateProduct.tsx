@@ -7,6 +7,12 @@ import DashboardEntete from "@/lib/components/dashboardEntete";
 import Link from "next/link";
 import Input from "./input";
 
+/* Composant formulaire d'envoie fait en côté serveur fesant appelle aux inputs fields en côté client pour
+permettre à l'admin de les modifier plus facilement.
+
+Composant côté serveur.
+*/
+
 interface productProps {
     product: Product
 }

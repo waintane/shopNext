@@ -8,6 +8,14 @@ import ProductPanel from "./productPanel";
 import ProductFilter from "./productFilter";
 import { Product } from "@prisma/client";
 
+/* Composant page qui vérifie que le user est belle et bien admin pour ensuite afficher tous les produits
+si aucune recherche n'a été faite et des items spécifique si une recherche a été faite.
+
+cette page appelle les composants productFilter et productPanel
+
+Composant côté serveur
+*/
+
 interface searchParamsProps {
     searchParams: {query:string}
 }

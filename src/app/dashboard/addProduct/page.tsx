@@ -10,6 +10,12 @@ import styles from "../../../style/components/dashboard.module.scss";
 import FormAddProduct from "./formAddProduct";
 import DashboardEntete from "@/lib/components/dashboardEntete";
 
+/* composant de page pour la page addproduct dans le dashboard, elle vérifie que le user est belle et bien
+admin et ensuite elle appelle le form add product.
+
+Composant côté serveur
+*/
+
 export default async function AddProduct(){
     const session:any = await getServerSession(authOptions);
     const user = session?.user;

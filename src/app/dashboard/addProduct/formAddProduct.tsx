@@ -5,6 +5,11 @@ import { redirect } from "next/navigation";
 import styles from "../../../style/microComponents/formProduct.module.scss";
 import DashboardEntete from "@/lib/components/dashboardEntete";
 
+/* composant formulaire permettant à l'admin de générer de nouveaux item dans sa base de donnée
+
+Composant côté serveur
+*/
+
 type FormAddProductProps = {
     categories : Categories[],
     user: User

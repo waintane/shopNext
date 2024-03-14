@@ -4,6 +4,12 @@ import { Categories, Product } from "@prisma/client"
 import styles from "../../../../style/components/productUpdate.module.scss";
 import { useState } from "react";
 
+/* Composant permettant de générer les inputs fileds en côté client pour permettre un processu de modification
+plus agréable pour l'utilisateur
+
+Composant côté client
+*/
+
 interface productProps {
     product : Product,
     categories: Categories[]

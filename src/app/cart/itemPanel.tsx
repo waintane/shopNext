@@ -1,6 +1,11 @@
 import { Product } from "@prisma/client";
 import styles from "../../style/components/cart.module.scss";
 
+/* Composant permettant de générer individuellement chaque element du cart
+
+Composant côté serveur
+*/
+
 interface itemProps {
     item : any
 }

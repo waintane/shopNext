@@ -7,6 +7,13 @@ import Title from "@/lib/components/title";
 import BannerPoint from "@/lib/components/bannerPoint";
 import Footer from "@/lib/components/footer";
 
+/* Le composant de page pour le panier avec une fonction pour effacer des elements du panier et
+vérifier le contenue du panier. Ce composant appelle le composant ItemPanel qui lui va 
+générer chaque item du panier approprié un par un 
+
+Composant côté serveur
+*/
+
 type ProductProps = {
     id: string;
     name: string;

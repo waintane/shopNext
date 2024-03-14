@@ -7,6 +7,12 @@ import styles from "../../../../style/components/dashboard.module.scss";
 import Link from "next/link";
 import FormUpdateProduct from "./formUpdateProduct";
 
+/* Composant de page fesant appelle au formulaire de modification de produit, vérifie que l'utilisateur
+est admin et appelle le produit que l'on veut modifier
+
+Composant côté serveur
+*/
+
 interface searchParamsProps {
     searchParams: {target:string}
 }

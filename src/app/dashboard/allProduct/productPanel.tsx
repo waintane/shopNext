@@ -4,9 +4,16 @@ import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
 import Image from 'next/image';
 
+/* Composant permettant de générer chaque produits de la page allProduct en leur attribuant la fonction 
+remove et la fonction update qui vont permettre l'admin d'effacer ou modifier un produit
+
+Composant côté serveur
+*/
+
 interface productsPanelProps {
     product: Product
 }
+
 async function removeCategory(formData:FormData){
     "use server";
 
